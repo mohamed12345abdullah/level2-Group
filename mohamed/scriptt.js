@@ -26,48 +26,93 @@ else{
     console.log("not a number");
     
 }
-// Function to get user input and calculate the result
-function calculateStudentGrade() {
-    // Get input from the user
-    const studentName = prompt("ادخل اسم الطالب:");
-    const subjectName = prompt("ادخل اسم المادة:");
-    const score = parseFloat(prompt("ادخل الدرجة التي حصل عليها الطالب:"));
-    const totalScore = parseFloat(prompt("ادخل الدرجة النهائية للمادة:"));
-  
-    // Validate input
-    if (isNaN(score) || isNaN(totalScore) || score < 0 || totalScore <= 0) {
-      alert("الرجاء إدخال أرقام صحيحة وموجبة للدرجات.");
-      return; // Exit the function if input is invalid
+var name=prompt("enter a name")
+if(name=="mohamed"){
+    console.log("hello mohamed");
+    
+}
+else{
+    console.log("hello unknown");
+    var name=prompt("أدخل المادة")
+    if(name=="math"){
+        console.log("math");
+        
+    }else if(name=="arabic"){
+        console.log("arabic");
+        
+    }else if(name=="english"){
+        console.log("english");
+        
+    }else{
+        console.log("unknown");
+        
     }
+}
+var num=prompt("أدخل الدرجة")
+if(num>60){
+    console.log("مقبول");
+    
+}
+else if(num<60){
+    console.log("ضعيف");
+    
+}
+else if(num>70){
+    console.log("جيد");
+    
+}
+else if(num>80){
+    console.log("جيد جدًا");
+    
+}
+else if(num>90){
+    console.log("ممتاز");
+    
+}
+
+
+// // Function to get user input and calculate the result
+// function calculateStudentGrade() {
+//     // Get input from the user
+//     c onst studentName = prompt("ادخل اسم الطالب:");
+//     const subjectName = prompt("ادخل اسم المادة:");
+//     const score = parseFloat(prompt("ادخل الدرجة التي حصل عليها الطالب:"));
+//     const totalScore = parseFloat(prompt("ادخل الدرجة النهائية للمادة:"));
   
-    // Calculate the percentage
-    const percentage = (score / totalScore) * 100;
+//     // Validate input
+//     if (isNaN(score) || isNaN(totalScore) || score < 0 || totalScore <= 0) {
+//       alert("الرجاء إدخال أرقام صحيحة وموجبة للدرجات.");
+//       return; // Exit the function if input is invalid
+//     }
   
-    // Determine the grade
-    let grade;
-    if (percentage >= 90) {
-      grade = "ممتاز";
-    } else if (percentage >= 80) {
-      grade = "جيد جدًا";
-    } else if (percentage >= 70) {
-      grade = "جيد";
-    } else if (percentage >= 60) {
-      grade = "مقبول";
-    } else {
-      grade = "ضعيف";
-    }
+//     // Calculate the percentage
+//     const percentage = (score / totalScore) * 100;
   
-    // Display the result
-    console.log("--- نتيجة الطالب ---");
-    console.log(`الطالب: ${studentName}`);
-    console.log(`المادة: ${subjectName}`);
-    console.log(`النسبة: ${percentage.toFixed(2)}%`); // .toFixed(2) to show 2 decimal places
-    console.log(`التقدير: ${grade}`);
-    console.log("------------------");
-  }
+//     // Determine the grade
+//     let grade;
+//     if (percentage >= 90) {
+//       grade = "ممتاز";
+//     } else if (percentage >= 80) {
+//       grade = "جيد جدًا";
+//     } else if (percentage >= 70) {
+//       grade = "جيد";
+//     } else if (percentage >= 60) {
+//       grade = "مقبول";
+//     } else {
+//       grade = "ضعيف";
+//     }
   
-  // Call the function to run the program
-  calculateStudentGrade();
+//     // Display the result
+//     console.log("--- نتيجة الطالب ---");
+//     console.log(`الطالب: ${studentName}`);
+//     console.log(`المادة: ${subjectName}`);
+//     console.log(`النسبة: ${percentage.toFixed(2)}%`); // .toFixed(2) to show 2 decimal places
+//     console.log(`التقدير: ${grade}`);
+//     console.log("------------------");
+//   }
+  
+//   // Call the function to run the program
+//   calculateStudentGrade();
 //   1. toUpperCase()
 //   * الوظيفة: تقوم بتحويل جميع الأحرف الإنجليزية في السلسلة النصية إلى أحرف كبيرة (Capital Letters).
 //   * مثال:
