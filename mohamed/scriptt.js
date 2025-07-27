@@ -33,6 +33,7 @@ if(name=="mohamed"){
 }
 else{
     console.log("hello unknown");
+}
     var name=prompt("أدخل المادة")
     if(name=="math"){
         console.log("math");
@@ -47,28 +48,30 @@ else{
         console.log("unknown");
         
     }
-}
+
 var num=prompt("أدخل الدرجة")
-if(num>60){
+if(num>90  &&  num<100){
+    console.log("ممتاز");
+}
+else if(num>80  &&  num<90){
+    console.log("جيد جدًا");
+    }
+    else if(num>70  && num<80){
+        console.log("جيد");
+        
+    }
+    
+
+else if(num>60  &&  num<70){
     console.log("مقبول");
     
 }
-else if(num<60){
+else{
     console.log("ضعيف");
     
 }
-else if(num>70){
-    console.log("جيد");
-    
-}
-else if(num>80){
-    console.log("جيد جدًا");
-    
-}
-else if(num>90){
-    console.log("ممتاز");
-    
-}
+
+
 
 
 // // Function to get user input and calculate the result
