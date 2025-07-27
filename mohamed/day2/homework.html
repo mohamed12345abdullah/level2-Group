@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn" id="B">
+        click here
+    </div>
+
+    <div>
+        <form action="">
+            <label for=""> 9*9 </label>
+
+            <input id="name" type="text" >
+
+
+            <input id="SUBMIT" type="submit">
+        </form>
+    </div>
+
+    <div id="result">
+
+    </div>
+    
+
+
+
+
+    <div class="btn2" id="B2">
+        click here
+    </div>
+
+    <div>
+        <form action="">
+            <label for=""> 8*8 </label>
+
+            <input id="name2" type="text" >
+
+
+            <input id="SUBMIT2" type="submit">
+        </form>
+    </div>
+
+    <div id="result2">
+
+    </div>
+
+
+
+<div class="btn3" id="B3">
+        click here
+    </div>
+
+    <div>
+        <form action="">
+            <label for=""> 7*7 </label>
+
+            <input id="name3" type="text" >
+
+
+            <input id="SUBMIT3" type="submit">
+        </form>
+    </div>
+
+    <div id="result3">
+
+    </div>
+
+    <!-- <div class="btn4" id="B4">
+        click here
+    </div>
+
+    <div>
+        <form action="">
+            <label for=""> 9*9 </label>
+
+            <input id="name4" type="text" >
+
+
+            <input id="SUBMIT4" type="submit">
+        </form>
+    </div>
+
+    <div id="result">
+
+    </div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+var submit =document.getElementById("SUBMIT");
+        var name="81"
+        submit.addEventListener("click", (event)=>{
+            event.preventDefault()
+            var innputName=document.querySelector("#name").value
+            var result=document.getElementById("result")
+                innputName= innputName.trim()
+                  if(innputName==name){
+                    result.innerHTML="true"
+                    console.log("true");
+                    
+                  }     else{
+                    result.innerHTML="false"
+                    console.log("false");
+                    
+                  }
+        }  )
+
+
+
+        var submit =document.getElementById("SUBMIT2");
+        var name="64"
+        submit.addEventListener("click", (event)=>{
+            event.preventDefault()
+            var innputName=document.querySelector("#name2").value
+            var result=document.getElementById("result2")
+                innputName= innputName.trim()
+                  if(innputName==name){
+                    result.innerHTML="true"
+                    console.log("true");
+                    
+                  }     else{
+                    result.innerHTML="false"
+                    console.log("false");
+                    
+                  }
+        }  )
+
+
+
+
+
+
+        var submit =document.getElementById("SUBMIT3");
+        var name="49"
+        submit.addEventListener("click", (event)=>{
+            event.preventDefault()
+            var innputName=document.querySelector("#name3").value
+            var result=document.getElementById("result3")
+                innputName= innputName.trim()
+                  if(innputName==name){
+                    result.innerHTML="true"
+                    console.log("true");
+                    
+                  }     else{
+                    result.innerHTML="false"
+                    console.log("false");
+                    
+                  }
+        }  )
+
+
+
+
+        // var submit =document.getElementById("SUBMIT4");
+        // var name="81"
+        // submit.addEventListener("click", (event)=>{
+        //     event.preventDefault()
+        //     var innputName=document.querySelector("#name4").value
+        //     var result=document.getElementById("result4")
+        //         innputName= innputName.trim()
+        //           if(innputName==name){
+        //             result.innerHTML="true"
+        //             console.log("true");
+                    
+        //           }     else{
+        //             result.innerHTML="false"
+        //             console.log("false");
+                    
+        //           }
+        // }  )
+
+
+
+
+
+
+    </script>
+</body>
+</html>
