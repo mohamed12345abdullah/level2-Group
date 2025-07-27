@@ -110,9 +110,18 @@ else if(num>90){
 //     console.log(`التقدير: ${grade}`);
 //     console.log("------------------");
 //   }
+
   
 //   // Call the function to run the program
 //   calculateStudentGrade();
+
+//endddddddddddddd
+
+
+
+
+
+
 //   1. toUpperCase()
 //   * الوظيفة: تقوم بتحويل جميع الأحرف الإنجليزية في السلسلة النصية إلى أحرف كبيرة (Capital Letters).
 //   * مثال:
