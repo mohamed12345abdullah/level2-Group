@@ -19,3 +19,19 @@ else{
 }
 
 var degree=prompt("enter degree")
+
+
+
+var score=prompt("enter a test score")
+var subjict=prompt(280)
+result=score%subjict
+result=score*100/100
+if(result>250){
+    console.log("successful");
+}
+
+else if(result<=250){
+    console.log("failed");
+    
+}
+
