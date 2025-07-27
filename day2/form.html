@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">name</label>
+        <input id="name" type="text">    <br>
+        <button id="submitBtn" type="submit">submit</button>
+        
+    </form>
+
+    <div id="result">
+    </div>
+
+
+    <script>
+        var submitBtn=document.getElementById("submitBtn");
+        console.log(submitBtn);
+        submitBtn.addEventListener("click",function(e){
+            console.log("function fun");
+            e.preventDefault();
+            var name=document.getElementById("name").value;
+            console.log(name);
+            document.getElementById("result").innerHTML='hello '+name;
+        })
+    </script>
+    
+</body>
+</html>
