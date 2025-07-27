@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+
+    <div class="btn" id="B">
+        click here
+    </div>
+
+    <div>
+        <form action="">
+            <label for=""> what is your name? </label>
+
+            <input id="name" type="text" placeholder="name">
+
+
+            <input id="SUBMIT" type="submit">
+        </form>
+    </div>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+
+        // function sum(num1 , num2){
+
+        //     var result = num1+num2;
+
+        //     console.log(result);
+            
+        // }
+
+
+
+
+
+        // sum(5,6)
+
+
+        // sum(12,5)
+
+
+
+
+        // function calcDiscount( price,discount){
+            
+
+        //     console.log(price  -  (price*discount/100 ));
+            
+
+
+        // }
+
+
+        // calcDiscount(500,20)
+
+
+        // calcDiscount(1000,5)
+
+
+
+
+
+
+
+        // for(var i =2 ;   i <20     ; i = i*2  ){
+
+          
+        // }
+
+        var submit =document.getElementById("SUBMIT");
+        var name="abdullah"
+        submit.addEventListener("click", (event)=>{
+            event.preventDefault()
+            var innputName=document.querySelector("#name").value
+            var result=document.getElementById("result")
+                innputName= innputName.trim()
+                  if(innputName==name){
+                    result.innerHTML="true"
+                    console.log("true");
+                    
+                  }     else{
+                    result.innerHTML="false"
+                    console.log("false");
+                    
+                  }
+        }  )
+
+    </script>
+    
+</body>
+</html>
