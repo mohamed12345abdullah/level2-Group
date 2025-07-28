@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="fun2.html">
+
+    <style>
+        h1 {
+            width: 100%;
+            height: 50px;
+            color: red;
+            text-align: center;
+            background-color: blue;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px black;
+            transition: all 0.5s ease-in-out;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1:hover {
+            background-color: red;
+            color: white;
+            transform: scale(1);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+    <h1>hello</h1>
+
+    <div class="fun1" id="fun2">
+        click here
+    </div>
+
+    <div>
+
+        <form action="">
+            <label for=""> what is your name </label>
+            <!-- <label for=""> what is your age </label> -->
+            <!-- <label for=""> what is your language </label> -->
+            <input id="name" type="text" placeholder="enter your name">
+
+
+            <input id="SUBMIT" type="submit">
+
+
+        </form>
+
+        <form action="">
+            <label for=""> what is your age </label>
+            <input id="age" type="text" placeholder="enter your age">
+            <input id="SUBMIT" type="submit">
+        </form>
+
+        <form action="">
+            <label for=""> what is your language </label>
+            <input id="language" type="text" placeholder="enter your language">
+            <input id="SUBMIT" type="submit">
+        </form>
+
+    </div>
+
+
+    <div id="result">
+
+    </div>
+
+
+    <script>
+
+        var submit = document.getElementById("SUBMIT");
+        var name = "adham"
+        submit.addEventListener("click", (event) => {
+            event.preventDefault()
+            var innputName = document.querySelector("#name").value
+            var result = document.getElementById("result")
+            innputName = innputName.trim()
+            if (innputName == name) {
+                result.innerHTML = "true"
+                console.log("true");
+
+            } else {
+                result.innerHTML = "false"
+                console.log("false");
+
+            }
+        })
+
+        var submit = document.getElementById("SUBMIT");
+        var name = "16"
+        submit.addEventListener("click", (event) => {
+            event.preventDefault()
+            var innputName = document.querySelector("#age").value
+            var result = document.getElementById("result")
+            innputName = innputName.trim()
+            if (innputName == 16) {
+                result.innerHTML = "true"
+                console.log("true");
+
+            } else {
+                result.innerHTML = "false"
+                console.log("false");
+
+            }
+        })
+
+        var submit = document.getElementById("SUBMIT");
+        var name = "germany"
+        submit.addEventListener("click", (event) => {
+            event.preventDefault()
+            var innputName = document.querySelector("#language").value
+            var result = document.getElementById("result")
+            innputName = innputName.trim()
+            if (innputName == "germany") {
+                result.innerHTML = "true"
+                console.log("true");
+
+            } else {
+                result.innerHTML = "false"
+                console.log("false");
+
+            }
+        })
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
