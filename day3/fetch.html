@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="container">
+
+
+    </div>
+
+
+    <script>
+        
+        async function getData(){
+            var result=await fetch("https://assiut-robotics-zeta.vercel.app/members/get/web")
+            var response=await result.json()
+            console.log(response);
+            
+            if(result.ok){
+                console.log("success");
+                var users=  response.date
+                console.log( users);
+
+                var div=document.getElementById("container")
+                    
+                for(var i=0;i<users.length;i++){
+                    div.innerHTML+=users[i].name+"<br>"
+                    
+                }
+                
+            }else{
+                console.log("failed");
+                
+            }
+
+
+        }
+ getData()
+
+
+
+
+    </script>
+</body>
+</html>
