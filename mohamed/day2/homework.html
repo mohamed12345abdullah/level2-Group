@@ -108,13 +108,17 @@
 
 
 var submit =document.getElementById("SUBMIT");
-        var name="81"
+        var answer1="81"
         submit.addEventListener("click", (event)=>{
             event.preventDefault()
             var innputName=document.querySelector("#name").value
             var result=document.getElementById("result")
                 innputName= innputName.trim()
-                  if(innputName==name){
+                console.log(innputName);
+                console.log("answer is : ",answer1);
+                
+                
+                  if(innputName==answer1){
                     result.innerHTML="true"
                     console.log("true");
                     
@@ -128,13 +132,13 @@ var submit =document.getElementById("SUBMIT");
 
 
         var submit =document.getElementById("SUBMIT2");
-        var name="64"
+        var answer2="64"
         submit.addEventListener("click", (event)=>{
             event.preventDefault()
             var innputName=document.querySelector("#name2").value
             var result=document.getElementById("result2")
                 innputName= innputName.trim()
-                  if(innputName==name){
+                  if(innputName==answer2){
                     result.innerHTML="true"
                     console.log("true");
                     
@@ -151,13 +155,13 @@ var submit =document.getElementById("SUBMIT");
 
 
         var submit =document.getElementById("SUBMIT3");
-        var name="49"
+        var answer3="49"
         submit.addEventListener("click", (event)=>{
             event.preventDefault()
             var innputName=document.querySelector("#name3").value
             var result=document.getElementById("result3")
                 innputName= innputName.trim()
-                  if(innputName==name){
+                  if(innputName==answer3){
                     result.innerHTML="true"
                     console.log("true");
                     

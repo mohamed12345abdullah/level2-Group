@@ -54,7 +54,7 @@
             <input id="name" type="text" placeholder="enter your name">
 
 
-            <input id="SUBMIT" type="submit">
+            <input id="SUBMIT1" type="submit">
 
 
         </form>
@@ -62,13 +62,13 @@
         <form action="">
             <label for=""> what is your age </label>
             <input id="age" type="text" placeholder="enter your age">
-            <input id="SUBMIT" type="submit">
+            <input id="SUBMIT2" type="submit">
         </form>
 
         <form action="">
             <label for=""> what is your language </label>
             <input id="language" type="text" placeholder="enter your language">
-            <input id="SUBMIT" type="submit">
+            <input id="SUBMIT3" type="submit">
         </form>
 
     </div>
@@ -81,9 +81,9 @@
 
     <script>
 
-        var submit = document.getElementById("SUBMIT");
+        var submit1 = document.getElementById("SUBMIT1");
         var name = "adham"
-        submit.addEventListener("click", (event) => {
+        submit1.addEventListener("click", (event) => {
             event.preventDefault()
             var innputName = document.querySelector("#name").value
             var result = document.getElementById("result")
@@ -99,9 +99,9 @@
             }
         })
 
-        var submit = document.getElementById("SUBMIT");
+        var submit2 = document.getElementById("SUBMIT2");
         var name = "16"
-        submit.addEventListener("click", (event) => {
+        submit2.addEventListener("click", (event) => {
             event.preventDefault()
             var innputName = document.querySelector("#age").value
             var result = document.getElementById("result")
@@ -117,9 +117,9 @@
             }
         })
 
-        var submit = document.getElementById("SUBMIT");
+        var submit3 = document.getElementById("SUBMIT3");
         var name = "germany"
-        submit.addEventListener("click", (event) => {
+        submit3.addEventListener("click", (event) => {
             event.preventDefault()
             var innputName = document.querySelector("#language").value
             var result = document.getElementById("result")
