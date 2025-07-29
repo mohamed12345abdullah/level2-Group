@@ -76,18 +76,11 @@
    justify-content: center;
    } */
 section#projects>h1{
-    color: rgba(6, 224, 6, 0.658);
+    color: rgb(12, 151, 12);
+    font-size: xx-large;
 }
-.project-container{
 
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    background-color: rgba(234, 236, 236, 0.932);
-}
+
 .project-card-tytle>h1{
     color: rgba(0, 95, 0, 0.904);
     font-size: x-large;
@@ -104,27 +97,68 @@ section#projects>h1{
     color: rgba(48, 151, 48, 0.774);
     font-size: large;
 }
-.project-container2{
+.project-containers{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.project-containers2{
      display: flex;
      flex-wrap: wrap;
      flex-direction: row;
      justify-content: center;
      align-items: center;
      gap: 50px;
-     background-color: rgba(234, 236, 236, 0.932);
+     background-color: rgb(241, 253, 236);
+     border-radius: 20px;
  }
  .project-card2{
 
-    width: 90%;
+    width: 98%;
     height: 150px;
+    border-radius: 20px;
  }
  .project-card{
 
-   width: 30%;
+   width:31%;
    height: 150px;
+   background-color: rgb(241, 253, 236);
+   border-radius: 20px;
  }
-
-
+ .project-card:hover{
+    background-color:rgb(228, 255, 216);
+box-shadow: 0 2px 2px 2px gray;
+transition-property: all;
+transition-duration: 0.3s;
+transition-timing-function: ease-in-out;
+transition-delay: 0s;
+border-radius: 30px;
+border: 2px solid rgb(0, 138, 0);
+ }
+ .project-card2:hover{
+    background-color:rgb(228, 255, 216);
+    box-shadow: 0 2px 2px 2px gray;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    border-radius: 30px;
+    border: 2px solid rgb(0, 138, 0);
+ }
+/* nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+} */
 
 
 /*end section projectis styleing*/
+
+
