@@ -67,8 +67,62 @@
 
 
 /*section projectis styleing*/
+/* section#projects{
+   flex-direction: row;
+   flex-wrap: wrap;
+    width: 100%; 
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   } */
+section#projects>h1{
+    color: rgba(6, 224, 6, 0.658);
+}
+.project-container{
 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: rgba(234, 236, 236, 0.932);
+}
+.project-card-tytle>h1{
+    color: rgba(0, 95, 0, 0.904);
+    font-size: x-large;
+}
+.project-card-dick>p{
+    color: rgba(48, 151, 48, 0.774);
+    font-size: large;
+}
+.project-card-tytle2>h1{
+    color: rgba(0, 95, 0, 0.904);
+    font-size: x-large;
+}
+.project-card-dick2>p{
+    color: rgba(48, 151, 48, 0.774);
+    font-size: large;
+}
+.project-container2{
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     gap: 50px;
+     background-color: rgba(234, 236, 236, 0.932);
+ }
+ .project-card2{
 
+    width: 90%;
+    height: 150px;
+ }
+ .project-card{
+
+   width: 30%;
+   height: 150px;
+ }
 
 
 
