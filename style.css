@@ -134,7 +134,7 @@ section#projects>h1{
     background-color:rgb(228, 255, 216);
 box-shadow: 0 2px 2px 2px gray;
 transition-property: all;
-transition-duration: 0.3s;
+transition-duration: 0.1s;
 transition-timing-function: ease-in-out;
 transition-delay: 0s;
 border-radius: 30px;
@@ -144,7 +144,7 @@ border: 2px solid rgb(0, 138, 0);
     background-color:rgb(228, 255, 216);
     box-shadow: 0 2px 2px 2px gray;
     transition-property: all;
-    transition-duration: 0.3s;
+    transition-duration: 0.1s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
     border-radius: 30px;
