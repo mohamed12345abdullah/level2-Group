@@ -7,9 +7,13 @@
 </head>
 <body>
     <form id="loginForm" >
+        <input type="text" name="name">
         <input type="email" name="email">
         <input type="password" name="password">
+        <input type="text" name="info">
         <input type="submit" value="login">
+        
+        <div id="message"></div>
         <div id="result"></div>
 
     </form>
@@ -22,10 +26,14 @@ var loginForm=document.getElementById("loginForm")
             event.preventDefault()    
             var email=document.querySelector("input[type='email']").value
             var password=document.querySelector("input[type='password']").value
-            console.log(email,password);
+            var name=document.querySelector("input[name='name']").value
+            var info=document.querySelector("input[name='info']").value
+            console.log(email,password,name,info);
             var data={
                 email,
-                password
+                password,
+                name,
+                info
             }
 
             var stringData=JSON.stringify(data)
