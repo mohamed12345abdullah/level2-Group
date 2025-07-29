@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(31, 31, 49);
+        }
+        form{
+            margin: auto;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            /* align-items: center; */
+            gap: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            height: 500px;
+            box-shadow: 0px 2px 2px 2px rgb(241, 238, 238);
+        }
+
+        form input{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #result{
+   
+            color:white;
+            gap: 10px;
+            border: 1px solid black;
+            padding: 10px;
+            height: 50px;
+            box-shadow: 0px 2px 2px 2px rgb(241, 238, 238);
+        }
+    </style>
+</head>
+<body>
+
+
+    <form id="loginForm" action="">
+        <input type="email" name="email">
+        <input type="password" name="password">
+        <input type="submit" value="login">
+        <div id="result"></div>
+
+    </form>
+      
+    <script>
+        var loginForm=document.getElementById("loginForm")
+        loginForm.addEventListener("submit",async function(event){
+            event.preventDefault()    
+            var email=document.querySelector("input[type='email']").value
+            var password=document.querySelector("input[type='password']").value
+            console.log(email,password);
+            var data={
+                email,
+                password
+            }
+
+            var stringData=JSON.stringify(data)
+            console.log(stringData);
+
+            var res= await fetch("https://asyut-eng-synd.vercel.app/api/auth/login",{
+                method:"POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: stringData
+            })  ; 
+
+            var result=await res.json()
+            console.log(result);
+            var resultDiv=document.getElementById("result")
+            resultDiv.innerHTML=result.message
+
+
+
+
+
+            
+            
+        })
+    </script>
+</body>
+</html>
