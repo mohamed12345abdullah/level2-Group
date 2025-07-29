@@ -20,7 +20,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         width: 30% ;
         border: 2pt solid black;
         padding: 5px;
@@ -40,22 +40,44 @@
         color: white;
         border-radius: 5px;
         width: 33%;
-        margin-top: 120px;
-       
+        margin-top: 100px;
        }
-       input[type="submit"]:hover{
-        background-color: rgb(190, 7, 175);
-        color: black;
-
-       }
-       input[type="email"]:hover{
-        background-color: rgb(190, 7, 175);
-        color: black;
-       }
-       input[type="password"]:hover{
-        background-color: rgb(190, 7, 175);
-        color: black;
-       }
+        input[type="submit"]:hover{
+            background-color: rgb(190, 7, 175);
+            color: black;
+        }
+        input[type="text"]{
+            background-color: white;
+            color: black;
+        }
+        input[type="text"]:hover{
+            background-color: rgb(190, 7, 175);
+            color: black;
+        }
+        input[type="email"]{
+            background-color: white;
+            color: black;
+        }
+        input[type="email"]:hover{
+            background-color: rgb(190, 7, 175);
+            color: black;
+        }
+        input[type="password"]{
+            background-color: white;
+            color: black;
+        }
+        input[type="password"]:hover{
+            background-color: rgb(190, 7, 175);
+            color: black;
+        }
+        input[type="info"]{
+            background-color: white;
+            color: black;
+        }
+        input[type="info"]:hover{
+            background-color: rgb(190, 7, 175);
+            color: black;
+        }
        #result{
         margin-top: 20px;
         padding: 10px;
@@ -68,6 +90,58 @@
         background-color: rgb(0, 0, 0);
         color: rgb(156, 11, 156);
        }
+       
+       
+       /* }
+       input[type="submit"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+       }
+       input[type="name"]{
+        background-color: rgb(190, 7, 175);
+        color: black;
+       }
+       input[type="email"]{
+        background-color: rgb(190, 7, 175);
+        color: black;
+       }
+       input[type="email"]:hover{
+            background-color: rgb(190, 7, 175);
+            color: black;
+       }
+       input[type="password"]{
+         background-color: rgb(190, 7, 175);
+        color: black;
+       }
+       input[type="password"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+       }
+       input[type="info"]{
+        background-color: rgb(190, 7, 175);
+        color: black;
+       }
+       input[type="info"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+       }
+
+       #result{
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #374069;
+        color: rgb(163, 26, 152);
+        box-shadow: 0px 2px 2px 2px rgba(147, 154, 218, 0.589);
+       }
+       #result:hover{
+        background-color: rgb(0, 0, 0);
+        color: rgb(156, 11, 156);
+       }
+       input[type="info"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+       } */
 
        
        
@@ -79,8 +153,10 @@
     
 
 <form id="login form" action="">
+    <input type="text" name="name" placeholder="name">
 <input type="email"name="email" placeholder="email">
 <input type="password"name="password" placeholder="password">
+<input type="info"name="info" placeholder="info">
 <input type="submit"value="login">
 <div id="result"></div>
 </form>
@@ -100,10 +176,12 @@
         e.preventDefault()
         var email=document.querySelector("input[name='email']").value
         var password=document.querySelector("input[name='password']").value
-        console.log(email,password);
+        var info=document.querySelector("input[name='info']").value
+        console.log(email,password,info);
         var data={
             email:email,
-            password:password
+            password:password,
+            info:info
         }
 
         
