@@ -284,12 +284,13 @@ p {
 
 /* hero section styling */
 .team-container {
+    background-color: rgb(96, 166, 224);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 30px;
-    margin: 40px;
-    padding: 10px;
+    /* margin: 40px;
+    padding: 10px; */
 }
 
 .member-card1, .member-card2, .member-card3, .member-card4, .member-card5 {
@@ -299,8 +300,8 @@ p {
     text-align: center;
     border: 2px solid transparent;
     border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
+    background: #ffffff;
+    box-shadow: 0 10px 50px rgb(255, 255, 255);
 }
 
 .member-photo1, .member-photo2, .member-photo3, .member-photo4, .member-photo5 {
