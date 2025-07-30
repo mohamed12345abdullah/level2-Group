@@ -18,10 +18,12 @@
     background-color:darkolivegreen ;
 } */
 .team-container {
+    width: 100px;
+    height:100px;
     display: flex;
-    background-color: blueviolet;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+
     gap: 30px;
     margin: 40px;
     padding: 10px;
@@ -33,16 +35,19 @@
 } */
 
 
-.member-card1{
+.member-card1 ,.member-card2 ,.member-card3 ,.member-card4 ,.member-card5{
     margin: 50px;
     padding: 28px 20px 20px 20px;
-    width: 260px;
+    width:100px;
     text-align: center;
     border: 2px solid transparent;
-    position: relative;
+
+
+ 
 }
 .member-photo1 {
     width: 100px;
+
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
@@ -51,7 +56,8 @@
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
 }
     img{
-        border-radius: 50px;
+        /* object-fit: cover; */
+        border-radius: 50%;
     }
 
 
@@ -65,13 +71,10 @@
     font-size: medium;
     font-weight: bold;
     margin-bottom: 6px;
-    color: var(--primary-dark);
 }
 
 .member-role {
-    color: var(--accent);
     margin-bottom: 10px;
-    font-weight: 700;
 }
 
 /* user agent stylesheet */
