@@ -25,7 +25,8 @@ body {
     text-decoration: none;
     box-sizing: border-box;
 }
-/* ===== nav bar styleing ===== */
+
+/* ===== nav bar styling ===== */
 /* ===== NAVIGATION BAR 1 ===== */
 .navbar1 {
     background-color: var(--primary-color);
@@ -134,7 +135,6 @@ body {
     margin-bottom: 20px;
 }
 
-
 /* ===== BUTTONS ===== */
 button {
     border: none;
@@ -165,8 +165,6 @@ button a {
     margin-bottom: 10px;
 }
 
-
-
 /* ===== FORM ELEMENTS ===== */
 label {
     color: rgb(165, 212, 233);
@@ -196,6 +194,7 @@ label {
     transform: scale(1.02);
     background-color: rgb(255, 255, 255);
 }
+
 /* ===== TOGGLE SWITCH ===== */
 #human > input {
     display: none;
@@ -280,68 +279,43 @@ p {
     font-weight: bold;
     margin-bottom: 20px;
 }
+
 /*==== end home section==== */
 
-
-
-
-/* end styleing of nav bar */
-
-
-/* hero section styleing */
-
-/* section{
-    background-color:darkolivegreen ;
-} */
+/* hero section styling */
 .team-container {
-    width: 100px;
-    height:100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
     gap: 30px;
     margin: 40px;
     padding: 10px;
 }
 
-/* div {
-    margin: 20px;
-    display: flex;
-} */
-
-
-.member-card1 ,.member-card2 ,.member-card3 ,.member-card4 ,.member-card5{
+.member-card1, .member-card2, .member-card3, .member-card4, .member-card5 {
     margin: 50px;
     padding: 28px 20px 20px 20px;
-    width:100px;
+    width: 200px;
     text-align: center;
     border: 2px solid transparent;
-
-
- 
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
 }
-.member-photo1 {
-    width: 100px;
 
+.member-photo1, .member-photo2, .member-photo3, .member-photo4, .member-photo5 {
+    width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 16px;
-    border: 3px solid var(--primary);
+    border: 3px solid var(--primary-color);
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
 }
-    img{
-        /* object-fit: cover; */
-        border-radius: 50%;
-    }
 
-
-
-/* div {
-    display: block;
-    unicode-bidi: isolate;
-} */
+img {
+    border-radius: 50%;
+}
 
 .member-name {
     font-size: medium;
@@ -353,41 +327,25 @@ p {
     margin-bottom: 10px;
 }
 
-/* user agent stylesheet */
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-
-.member-card2{
-    text-align: center;
-}
-
 .member-bio {
     font-size: 0.97em;
-    color: var(--muted);
+    color: #555;
     margin-bottom: 12px;
 }
 
-.member-photo2 {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 16px;
-    border: 3px solid var(--primary);
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
+.social-links a {
+    margin: 0 5px;
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s;
 }
 
-/* user agent stylesheet */
-/* img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-} */
+.social-links a:hover {
+    color: var(--primary-color);
+}
 
+/* end hero section styling */
 
-/* end hero section styleing */
-/* start footer */
 /* ===== FOOTER ===== */
 #footer {
     display: flex;
@@ -439,7 +397,66 @@ div {
     transform: scale(1.2);
 }
 
-/* ===== end footer */
+/*section projects styling*/
+section#projects > h1 {
+    color: rgb(12, 151, 12);
+    font-size: xx-large;
+    font-family: Cairo, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.project-card-tytle1 > h1,
+.project-card-tytle2 > h1 {
+    color: rgba(0, 95, 0, 0.904);
+    font-size: x-large;
+}
+
+.project-card-dick1 > p,
+.project-card-dick2 > p {
+    color: rgba(48, 151, 48, 0.774);
+    font-size: large;
+}
+
+.project-containers1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.project-containers2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: rgb(241, 253, 236);
+    border-radius: 20px;
+}
+
+.project-card1, .project-card2 {
+    width: 300px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: rgb(241, 253, 236);
+}
+
+.project-card1:hover, .project-card2:hover {
+    background-color: rgb(228, 255, 216);
+    box-shadow: 0 2px 2px 2px gray;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    border-radius: 30px;
+    border: 2px solid rgb(0, 138, 0);
+}
+
+/* end section projects styling */
 
 
 
