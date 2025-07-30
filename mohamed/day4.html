@@ -199,11 +199,13 @@
         body:stringData
 
     })
+    console.log(result);
     var resultDiv=document.getElementById("result")
 
     console.log(result);
     var response=await result.json()
-        resultDiv.innerHTML=response.message
+    console.log(response);
+    resultDiv.innerHTML=response.message
     console.log(response);
     if(result.ok){
         console.log("success");

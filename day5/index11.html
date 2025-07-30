@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .user{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgb(151, 16, 214);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .userImg{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .name{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .email{
+            font-size: 15px;
+        }
+        .info{
+            font-size: 15px;
+        }
+        .userImg img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .userImg img:hover{
+            transform: scale(1.1);
+        }
+        .user:hover{
+            transform: scale(1.1);
+        }
+        .userImg img:hover{
+            transform: scale(1.1);
+        }
+        .user:hover{
+            transform: scale(1.1);
+        }
+        .userImg img:hover{
+            transform: scale(1.1);
+        }
+        .user:hover{
+            transform: scale(1.1);
+        }
+        .userImg img:hover{
+            transform: scale(1.1);
+        }
+        .user:hover{
+            transform: scale(1.1);
+        }
+
+
+        .userSection{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+    </style>
+</head>
+<body>
+    <section class="userSection">
+
+       
+    </section>
+    
+    <script>
+        var userSection=document.querySelector(".userSection")
+        var users=[]
+        var getData= async function(){
+            var res= await fetch("https://asyut-eng-synd.vercel.app/api/users/");
+            var response=await res.json()
+            console.log(response);
+            users=response.users
+            console.log(users);
+
+
+            for(var i=0;i<users.length;i++){
+                userSection.innerHTML+=`
+                 <div class="user">
+            <div class="userImg">
+                <img src="../imgs/1000036020.jpg" alt="">
+            </div>
+            <div class="name">
+${users[i].name} 
+            </div>
+            <div class="email">
+${users[i].email}
+            </div>
+            <div class="info">
+${users[i].info}
+            </div>
+
+        </div>`
+  
+            }
+       
+            
+        }
+
+        getData();
+    </script>
+
+</body>
+</html>
