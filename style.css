@@ -445,6 +445,15 @@ section#projects > h1 {
     background-color: rgb(123, 128, 141);
 }
 
+
+.project-card1{
+    background-color: rgb(123, 128, 141);
+}
+
+.project-card2{
+    background-color: rgb(123, 128, 141);
+}
+
 .project-card1:hover, .project-card2:hover {
     background-color: rgb(123, 128, 141);
     box-shadow: 0 2px 2px 2px gray;
