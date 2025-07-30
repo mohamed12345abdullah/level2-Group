@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        #calculator-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .screen{
+            width: 200px;
+            height: 50px;
+            border: 3px solid #e706b6;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: right;
+            color: #e706b6;
+        }
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            background-color: #f113d4;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #f3ebeb;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="calculator-container">
+        <div class="screen"></div>
+        <div class="buttons">
+            <button onclick="clickButton(1)">1</button>
+            <button onclick="clickButton(2)">2</button>
+            <button onclick="clickButton(3)">3</button>
+            <button onclick="clickButton('+')">+</button>
+            <button onclick="clickButton(4)">4</button>
+            <button onclick="clickButton(5)">5</button>
+            <button onclick="clickButton(6)">6</button>
+            <button onclick="clickButton('-')">-</button>
+            <button onclick="clickButton(7)">7</button>
+            <button onclick="clickButton(8)">8</button>
+            <button onclick="clickButton(9)">9</button>
+            <button onclick="clickButton('*')">*</button>
+            <button onclick="clickButton(0)">0</button>
+            <button onclick="clickButton('.')">.</button>
+            <button onclick="clickButton('/')">/</button>
+            <button onclick="equal()">=</button>
+            <button onclick="del()">C</button>
+        </div>
+    </div>
+    <script>
+        var screen=document.querySelector('.screen');
+        function clickButton(num){
+            console.log(num);
+            screen.innerHTML+=num;
+        }
+        function equal(){
+            var x="";
+            x =screen.innerHTML;
+            console.log(x);
+            
+            screen.innerHTML=eval(x);
+            
+        
+        }
+        function del(){
+            screen.innerHTML="";
+        }
+       
+
+        
+    </script>
+</body>
+</html>
