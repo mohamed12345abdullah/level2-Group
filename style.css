@@ -417,7 +417,7 @@ section#projects > h1 {
     font-size: large;
 }
 
-.project-containers1 {
+.project-containers1 , .project-containers2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -427,7 +427,7 @@ section#projects > h1 {
     background-color: rgb(123, 128, 141);
 }
 
-.project-containers2 {
+/* .project-containers2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -436,7 +436,7 @@ section#projects > h1 {
     gap: 50px;
     background-color: rgb(123, 128, 141);
     border-radius: 20px;
-}
+} */
 
 .project-card1, .project-card2 {
     width: 300px;
