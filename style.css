@@ -172,11 +172,11 @@ section#projects>h1{
 }
 
 
-.project-card-tytle>h1{
+.project-card-tytle1>h1{
     color: rgba(0, 95, 0, 0.904);
     font-size: x-large;
 }
-.project-card-dick>p{
+.project-card-dick1>p{
     color: rgba(48, 151, 48, 0.774);
     font-size: large;
 }
@@ -188,7 +188,7 @@ section#projects>h1{
     color: rgba(48, 151, 48, 0.774);
     font-size: large;
 }
-.project-containers{
+.project-containers1{
 
     display: flex;
     flex-wrap: wrap;
@@ -210,18 +210,18 @@ section#projects>h1{
  }
  .project-card2{
 
-    width: 98%;
+    width:300px;
     height: 150px;
     border-radius: 20px;
  }
- .project-card{
+ .project-card1{
 
-   width:31%;
+   width:300px;
    height: 150px;
    background-color: rgb(241, 253, 236);
    border-radius: 20px;
  }
- .project-card:hover{
+ .project-card1:hover{
     background-color:rgb(228, 255, 216);
 box-shadow: 0 2px 2px 2px gray;
 transition-property: all;
