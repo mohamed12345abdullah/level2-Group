@@ -27,10 +27,10 @@
     padding: 10px;
 }
 
-div {
+/* div {
     margin: 20px;
     display: flex;
-}
+} */
 
 
 .member-card1{
@@ -56,10 +56,10 @@ div {
 
 
 
-div {
+/* div {
     display: block;
     unicode-bidi: isolate;
-}
+} */
 
 .member-name {
     font-size: medium;
@@ -74,7 +74,7 @@ div {
     font-weight: 700;
 }
 
-user agent stylesheet
+/* user agent stylesheet */
 div {
     display: block;
     unicode-bidi: isolate;
@@ -100,11 +100,11 @@ div {
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
 }
 
-user agent stylesheet
-img {
+/* user agent stylesheet */
+/* img {
     overflow-clip-margin: content-box;
     overflow: clip;
-}
+} */
 
 
 /* end hero section styleing */
