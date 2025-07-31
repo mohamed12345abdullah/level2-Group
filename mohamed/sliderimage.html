@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sliderimage</title>
+    <style>
+       .container{
+       width:100% ;
+       height: 100vh;
+       overflow: hidden;
+       position: relative;
+       }
+       .container img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+       transform: translateY(-100px);        
+       transition: all 1s ;
+       }
+       .container .event{
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 1s ease-in-out;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+       }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="event" src="../imgs/1000036006.jpg" alt="">
+        <img src="../imgs/1000036011.jpg" alt="">
+        <img src="../imgs/1000036020.jpg" alt="">
+    </div>
+    <script>
+        var eventImage=document.querySelector(".event")
+        var images=document.querySelectorAll("img")
+        var index=0
+        setInterval(function(){
+            images[index].classList.remove("event")
+            index++
+            if(index==images.length){
+                index=0
+            }
+            images[index].classList.add("event")
+
+        },1000)  
+    </script>
+</body>
+</html>
+
+
+
+

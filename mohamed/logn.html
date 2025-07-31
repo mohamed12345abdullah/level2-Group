@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+     #loginform{
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 30% ;
+        border: 2pt solid black;
+        padding: 5px;
+        height: 350px;
+        background-color: gray;
+        border-radius: 10px;
+        box-shadow: 0px 2px 2px 2px rgba(147, 154, 218, 0.589);
+     }
+     input{
+        padding: 5px;
+        border-radius: 5px;
+        width: 50%;
+        box-shadow: 0px 2px 2px 2px rgba(64, 66, 92, 0.589);
+     }
+     input[type="submit"]{
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        width: 33%;
+        margin-top: 100px;
+     }
+     input[type="submit"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+     }
+     input[type="email"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+     }
+     input[type="password"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+     }
+     input[type="info"]:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+     }
+     #result{
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #374069;
+        color: rgb(163, 26, 152);
+        box-shadow: 0px 2px 2px 2px rgba(147, 154, 218, 0.589);
+     }
+     #result:hover{
+        background-color: rgb(0, 0, 0);
+        color: rgb(156, 11, 156);
+     }
+     button{
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        width: 33%;
+        margin-top: 100px;
+     }
+     button:hover{
+        background-color: rgb(190, 7, 175);
+        color: black;
+     }
+     
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <form id="loginform">
+
+            <label for="">email</label>
+            <input type="email" name="email" id="email" placeholder="enter your email">
+            <label for="">password</label>
+            <input type="password" name="password" id="password" placeholder="enter your password">
+            <button>login</button>
+            <div id="result"></div>
+        </form>
+    </div>
+    <script>
+        var  loginform=document.getElementById("loginform")
+    loginform.addEventListener("submit",async function(e){
+        e.preventDefault()
+        var email=document.querySelector("input[name='email']").value
+        var password=document.querySelector("input[name='password']").value
+        console.log(email,password);
+        var data={
+            email:email,
+            password:password,
+        }
+        stringData=JSON.stringify(data)
+        console.log(stringData);
+
+            var result= await fetch("https://asyut-eng-synd.vercel.app/api/auth/login",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+         
+        },
+        body:stringData
+
+    })
+    console.log(result);
+    var resultDiv=document.getElementById("result")
+
+    console.log(result);
+    var response=await result.json()
+    console.log(response);
+    resultDiv.innerHTML=response.message
+    console.log(response);
+    if(result.ok){
+        console.log("success");
+
+    }else{
+        console.log("failed");
+       
+    }   
+
+
+
+    })
+    </script>
+</body>
+</html>
