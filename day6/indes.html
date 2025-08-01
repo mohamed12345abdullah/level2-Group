@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+     
+        div{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            background-color: aqua;
+        }
+        
+        .lightMode{
+            background-color: #fff;
+            color: #000;
+        }
+        .darkMode{
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="">
+        out team
+    </div>
+    <button onclick="changeColor()">chose red</button>
+
+    <script>
+        var x=true;
+        function changeColor(){
+            x=!x;
+
+            console.log(x);
+
+            outBox=document.getElementById("box");
+            if(x==true){
+                outBox.classList.remove("darkMode");
+                outBox.classList.add("lightMode");
+            }else{
+                outBox.classList.remove("lightMode");
+                outBox.classList.add("darkMode");
+            }
+            
+        }
+
+      
+    </script>
+</body>
+</html>

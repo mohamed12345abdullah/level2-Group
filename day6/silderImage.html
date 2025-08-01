@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide image </title>
+    <style>
+        .container{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            transform: translateY(-100%);
+            transition: all 1s ;
+            
+        }
+
+        .container .active{
+            transform: translateY(0);
+            opacity: 1;
+            transition: all 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <img  src="../imgs/1000036006.jpg" alt="">
+        <img src="../imgs/1000036011.jpg" alt="">
+        <img src="../imgs/1000036020.jpg" alt="">
+    </div>
+    
+    <button onclick="next()"> next</button>
+    <script>
+        imgs=document.querySelectorAll(".container img")
+        var i=0;
+        function next(){
+ 
+            console.log(i);
+            console.log(imgs);
+            imgs[i].classList.remove("active");
+            i=i+1;  
+            if(i>=imgs.length){
+                i=0;
+            }   
+            imgs[i].classList.add("active")
+ 
+            
+            
+            
+        }
+        
+    </script>
+</body>
+</html>
