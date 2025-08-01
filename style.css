@@ -1,5 +1,4 @@
-
-    /* ===== CSS VARIABLES ===== */
+/* ===== CSS VARIABLES ===== */
 :root {
     --primary-color: rgb(147, 172, 188);
     --secondary-color: #f5f5f5;
@@ -8,6 +7,13 @@
     --button-hover-color: #003d82;
     --button-active-color: #002b5b;
     --button-disabled-color: #ccc;
+    --hover-color: rgb(190, 220, 235); /* تم إضافة هذا المتغير */
+
+    /* Dark Mode Variables (يمكن تفعيلها بـ JavaScript) */
+    --dark-bg-color: #222;
+    --dark-text-color: #eee;
+    --dark-primary-color: #333;
+    --dark-secondary-color: #444;
 }
 
 /* ===== GLOBAL STYLES ===== */
@@ -19,12 +25,140 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: 'Calibri', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
     text-decoration: none;
     box-sizing: border-box;
 }
+
+/* Dark Mode styles (تُضاف عند تفعيل الكلاس 'dark-mode' على <body>) */
+body.dark-mode {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .navbar1 {
+    background-color: var(--dark-primary-color);
+}
+body.dark-mode .navdiv1 li a,
+body.dark-mode .navdiv1 i {
+    color: var(--dark-text-color);
+}
+body.dark-mode .navdiv1 li a:hover,
+body.dark-mode .navdiv1 i:hover {
+    color: rgb(100, 150, 200); /* لون هوفر مختلف للوضع الداكن */
+}
+
+body.dark-mode .navbar2 {
+    background-color: var(--dark-primary-color);
+    border-color: var(--dark-secondary-color);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode .navdiv2 a {
+    color: var(--dark-text-color);
+}
+body.dark-mode .logo2 a {
+    color: rgb(150, 190, 210);
+}
+body.dark-mode .language label,
+body.dark-mode .notifications label {
+    color: var(--dark-text-color);
+}
+body.dark-mode .language input {
+    background-color: var(--dark-secondary-color);
+    color: var(--dark-text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .language input:hover {
+    background-color: #555;
+}
+
+body.dark-mode .mode-toggle .toggle-label {
+    background-color: var(--dark-secondary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .mode-toggle input:checked + .toggle-label {
+    background-color: #2196F3; /* لون مختلف عند التفعيل */
+}
+body.dark-mode .mode-toggle .toggle-ball {
+    background-color: #eee;
+}
+body.dark-mode .mode-toggle input:checked + .toggle-label .toggle-ball {
+    background-color: white;
+}
+
+body.dark-mode .home {
+    background-color: #2a3a4a; /* لون خلفية للوضع الداكن */
+}
+body.dark-mode .home-content p {
+    color: var(--dark-text-color);
+}
+
+body.dark-mode .team-container {
+    background-color: #3b4d5e;
+}
+body.dark-mode .member-card {
+    background: var(--dark-secondary-color);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+    border-color: var(--dark-primary-color);
+}
+body.dark-mode .member-photo {
+    border-color: var(--dark-text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+body.dark-mode .member-bio,
+body.dark-mode .social-links a {
+    color: var(--dark-text-color);
+}
+body.dark-mode .social-links a:hover {
+    color: rgb(150, 190, 210);
+}
+
+body.dark-mode #projects h1 {
+    color: var(--dark-text-color);
+}
+body.dark-mode .projects-grid {
+    background-color: var(--dark-secondary-color);
+}
+body.dark-mode .project-card {
+    background-color: var(--dark-primary-color);
+    border-color: var(--dark-secondary-color);
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .project-card:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+body.dark-mode .project-card-title h1,
+body.dark-mode .project-card-description p {
+    color: var(--dark-text-color);
+}
+
+
+body.dark-mode #footer {
+    background-color: var(--dark-primary-color);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode #footer p {
+    color: var(--dark-text-color);
+}
+body.dark-mode #footer a {
+    color: rgb(150, 190, 210);
+}
+body.dark-mode #footer a:hover {
+    color: rgb(100, 150, 200);
+}
+body.dark-mode #icons a {
+    color: var(--dark-text-color);
+}
+body.dark-mode #icons a:hover {
+    color: rgb(150, 190, 210);
+}
+
 
 /* ===== nav bar styling ===== */
 /* ===== NAVIGATION BAR 1 ===== */
@@ -35,6 +169,7 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .navdiv1 {
@@ -68,6 +203,9 @@ body {
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s ease;
+    display: flex; /* لترتيب الأيقونة والنص */
+    align-items: center;
+    gap: 5px; /* مسافة بين الأيقونة والنص */
 }
 
 .navdiv1 li a:hover {
@@ -84,6 +222,35 @@ body {
 .navdiv1 i:hover {
     color: rgb(165, 209, 234);
 }
+
+/* Styles for navigation buttons */
+.nav-button, .sidebar-button {
+    background-color: var(--button-color);
+    color: rgb(0, 0, 0); /* لون نص الزر */
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgb(83, 91, 113, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block; /* لجعل الروابط تتصرف كأزرار */
+    text-align: center;
+}
+
+.nav-button:hover, .sidebar-button:hover {
+    transform: scale(1.05);
+    background-color: var(--button-hover-color);
+    color: white; /* لون نص الزر عند التمرير */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Adjust margin for buttons in navbar1 */
+.navdiv1 li .nav-button {
+    margin-left: 10px; /* مسافة إضافية بين عناصر التنقل والأزرار */
+}
+
 /* ===== end NAVIGATION BAR 1 ===== */
 
 /* ===== NAVIGATION BAR 2 (SIDEBAR) ===== */
@@ -94,13 +261,13 @@ body {
     padding: 20px 10px;
     position: fixed;
     right: 0;
-    top: 70px;
+    top: 70px; /* تحت navbar1 */
     height: calc(100vh - 70px);
     width: 120px;
-    z-index: 1000;
+    z-index: 999; /* أقل من navbar1 لكن فوق المحتوى */
     border: 1px solid rgb(59, 101, 145);
     border-radius: 10px;
-    box-shadow: 0 8px 30px rgb(83, 91, 113);
+    box-shadow: 0 8px 30px rgb(83, 91, 113, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -125,6 +292,12 @@ body {
     font-weight: bold;
     display: block;
     text-align: center;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navdiv2 a:hover {
+    color: rgb(100, 150, 200);
 }
 
 .logo2 a {
@@ -135,39 +308,21 @@ body {
     margin-bottom: 20px;
 }
 
-/* ===== BUTTONS ===== */
-button {
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: var(--button-color);
-    color: rgb(177, 216, 238);
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgb(83, 91, 113);
-    transition: all 0.3s ease;
-    cursor: pointer;
+/* Adjustments for sidebar buttons */
+.sidebar-button {
     width: 100%;
-}
-
-button:hover {
-    transform: scale(1.05);
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-
-button a {
-    color: inherit;
-    display: block;
-}
-
-.navdiv2 button {
     margin-bottom: 10px;
 }
 
-/* ===== FORM ELEMENTS ===== */
-label {
-    color: rgb(165, 212, 233);
+/* ===== Settings Section ===== */
+.settings-section {
+    margin-top: auto; /* يدفع قسم الإعدادات إلى الأسفل */
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.settings-section label {
+    color: rgb(165, 212, 233); /* لون افتراضي للوضع الفاتح */
     font-size: 14px;
     font-weight: bold;
     display: block;
@@ -175,19 +330,21 @@ label {
 }
 
 .language,
-.darkmode,
-.lightmode,
+.mode-toggle, /* تم تغيير .darkmode و .lightmode إلى .mode-toggle */
 .notifications {
     margin-bottom: 15px;
+    padding: 0 5px; /* لبعض المسافة الداخلية */
 }
 
 .language input {
     width: 100%;
     border-radius: 10px;
     padding: 8px;
-    box-shadow: 0 4px 15px rgb(123, 128, 141);
+    box-shadow: 0 4px 15px rgb(123, 128, 141, 0.1);
     border: none;
     transition: all 0.3s ease;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .language input:hover {
@@ -195,40 +352,44 @@ label {
     background-color: rgb(255, 255, 255);
 }
 
-/* ===== TOGGLE SWITCH ===== */
-#human > input {
-    display: none;
+/* ===== TOGGLE SWITCH (for Dark Mode) ===== */
+.mode-toggle input[type="checkbox"] {
+    display: none; /* إخفاء التشيك بوكس الأصلي */
 }
 
-#human > label {
+.mode-toggle .toggle-label {
     cursor: pointer;
-    display: inline-block;
-    width: 80px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: rgb(148, 172, 188);
-    box-shadow: 0 4px 15px rgb(123, 128, 141);
+    display: block; /* لتمكين الهامش التلقائي */
+    margin: 0 auto; /* توسيط المفتاح */
+    width: 60px; /* عرض أصغر للمفتاح */
+    height: 30px; /* ارتفاع أصغر */
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgb(123, 128, 141, 0.2);
     position: relative;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dot {
+.mode-toggle .toggle-ball {
     position: absolute;
-    width: 36px;
-    height: 36px;
+    width: 26px; /* حجم الكرة */
+    height: 26px; /* حجم الكرة */
     top: 2px;
     left: 2px;
     border-radius: 50%;
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-#human > input:checked + label .dot {
-    transform: translateX(38px);
+.mode-toggle input[type="checkbox"]:checked + .toggle-label {
+    background-color: #4CAF50; /* لون أخضر عند التفعيل */
 }
 
-/* ===== end TOGGLE SWITCH ===== */
+.mode-toggle input[type="checkbox"]:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px); /* تحريك الكرة إلى اليمين */
+}
+
 
 /* ===== HOME SECTION ===== */
 .home {
@@ -236,75 +397,128 @@ label {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 80px 20px 20px;
+    padding: 80px 20px 20px; /* مسافة للناف بار العلوي */
     background-color: rgb(166, 206, 234);
+    gap: 50px; /* مسافة بين السلايدر والمحتوى */
+    flex-wrap: wrap; /* للسماح بالعناصر بالانتقال إلى سطر جديد في الشاشات الصغيرة */
+    padding-right: 140px; /* مسافة للناف بار الجانبي */
 }
 
-#image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px;
-    text-align: center;
-}
-
-#image img {
-    width: 100%;
-    max-width: 400px;
+.slider-container {
+    width: 50%; /* عرض السلايدر */
+    max-width: 600px;
+    height: 400px; /* ارتفاع ثابت للسلايدر */
+    overflow: hidden;
+    position: relative;
     border-radius: 20px;
-    box-shadow: 0 8px 30px rgb(92, 131, 145);
-    transition: all 0.3s ease;
-    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgb(92, 131, 145, 0.3);
 }
 
-#image img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 16px 35px rgb(92, 131, 145);
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-50px); /* تعديل قيمة التحويل الأولية */
+    transition: all 1s ease-in-out; /* انتقال سلس */
 }
 
-p {
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.6;
-    margin: 15px 0;
+.slider-container .event {
+    transform: translateY(0);
+    opacity: 1;
 }
 
-#image p:first-of-type {
-    font-size: 28px;
+.slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10; /* لضمان ظهور الأزرار فوق الصور */
+}
+
+.slider-container #right-button {
+    right: 10px;
+}
+
+.slider-container #left-button {
+    left: 10px;
+}
+
+.slider-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.home-content {
+    width: 40%; /* عرض محتوى النص */
+    max-width: 500px;
+    text-align: left;
+    padding: 20px;
+}
+
+.home-content .main-heading {
+    font-size: 2.5em; /* حجم كبير للعنوان الرئيسي */
     font-weight: bold;
+    color: var(--text-color);
     margin-bottom: 20px;
+}
+
+.home-content p {
+    color: rgb(0, 0, 0);
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 /*==== end home section==== */
 
 /* hero section styling */
-.team-container {
+#profiles {
+    padding: 50px 20px;
     background-color: rgb(114, 170, 216);
+    text-align: center;
+    padding-right: 140px; /* مسافة للناف بار الجانبي */
+}
+
+#profiles h1 {
+    font-size: 2.2em;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.team-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 30px;
-    /* margin: 40px;
-    padding: 10px; */
 }
 
-.member-card1, .member-card2, .member-card3, .member-card4, .member-card5 {
-    margin: 50px;
+.member-card {
+    margin: 20px; /* تقليل الهامش الخارجي */
     padding: 28px 20px 20px 20px;
-    width: 200px;
+    width: 220px; /* زيادة العرض قليلاً */
     text-align: center;
-    border: 2px solid transparent;
+    border: 2px solid var(--primary-color); /*border color from variable */
     border-radius: 20px;
     background: #ffffff;
-    box-shadow: 0 10px 50px rgb(255, 255, 255);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.member-photo1, .member-photo2, .member-photo3, .member-photo4, .member-photo5 {
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
+}
+
+.member-photo {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -314,29 +528,28 @@ p {
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
 }
 
-img {
-    border-radius: 50%;
-}
-
 .member-name {
-    font-size: medium;
+    font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 6px;
+    color: var(--text-color);
 }
 
 .member-role {
+    font-size: 0.9em;
+    color: #777;
     margin-bottom: 10px;
 }
 
 .member-bio {
-    font-size: 0.97em;
+    font-size: 0.9em;
     color: #555;
     margin-bottom: 12px;
 }
 
 .social-links a {
-    margin: 0 5px;
-    font-size: 18px;
+    margin: 0 8px; /* زيادة المسافة بين الأيقونات */
+    font-size: 1.2em; /* حجم أكبر للأيقونات */
     color: #333;
     transition: color 0.3s;
 }
@@ -356,9 +569,9 @@ img {
     background-color: rgb(163, 191, 208);
     padding: 40px 20px;
     width: 100%;
-    margin-right: 140px;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    padding-right: 140px; /* مسافة للناف بار الجانبي */
 }
 
 #footer a {
@@ -376,7 +589,7 @@ img {
 #footer p {
     color: rgb(0, 0, 0);
     max-width: 800px;
-    margin: 15px 0;
+    margin: 15px auto; /* توسيط الفقرات */
 }
 
 #icons {
@@ -398,152 +611,134 @@ img {
     transform: scale(1.2);
 }
 
+/* section projects styling */
+section#projects {
+    padding: 50px 20px;
+    background-color: var(--secondary-color); /* لون خلفية من المتغيرات */
+    text-align: center;
+    padding-right: 140px; /* مسافة للناف بار الجانبي */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*section projectis styleing*/
-/* section#projects{
-   flex-direction: row;
-   flex-wrap: wrap;
-    width: 100%; 
-    display: flex;
-   align-items: center;
-   justify-content: center;
-   } */
-section#projects>h1{
+section#projects > h1 {
     color: var(--text-color);
-    font-size: xx-large;
-    font-family: Cairo, Arial, sans-serif;
+    font-size: 2.2em; /* حجم مناسب للعنوان */
+    font-family: 'Cairo', Arial, sans-serif; /* خط مناسب للغة العربية */
     font-weight: 700;
+    margin-bottom: 40px;
 }
 
-
-.project-card-tytle1>h1{
-    color: var(--text-color);
-    font-size: x-large;
-}
-.project-card-dick1>p{
-    color: var(--text-color);
-    font-size: large;
-}
-.project-card-tytle2>h1{
-    color: var(--text-color);
-    font-size: x-large;
-}
-.project-card-dick2>p{
-    color: var(--text-color);
-    font-size: large;   
-}
-.project-containers1{
-
+.projects-grid {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
     gap: 30px;
-    background-color: var(--button-color);
+    padding: 20px;
+    background-color: var(--button-color); /* استخدام متغير للون الخلفية */
     border-radius: 20px;
-    border: 2px solid var(--hover-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-.project-containers2{
-     display: flex;
-     flex-wrap: wrap;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
-     gap: 50px;
-     background-color: var(--button-color);
-     border-radius: 20px;
-     border: 2px solid var(--hover-color);
-     box-shadow: 0 2px 2px 2px gray;
- }
- .project-card2{
 
-    width:300px;
-    height: 150px;
-    border-radius: 20px;
+.project-card {
+    width: 300px;
+    min-height: 150px; /* ارتفاع أدنى للبطاقة */
     background-color: var(--primary-color);
-    border: 2px solid var(--hover-color);
-    box-shadow: 0 2px 2px 2px gray;
-     }
- .project-card1{
-
-   width:300px;
-   height: 150px;
- background-color: var(--primary-color);
-   border-radius: 20px;
-   border: 2px solid var(--hover-color);
-   box-shadow: 0 2px 2px 2px gray;
- }
- .project-card1:hover{
-    background-color: var(--hover-color);
-box-shadow: 0 2px 2px 2px gray;
-transition-property: all;
-transition-duration: 0.1s;
-transition-timing-function: ease-in-out;
-transition-delay: 0s;
-border-radius: 30px;
-border: 2px solid   var(--hover-color);
- }
- .project-card2:hover{
-   background-color:var(--hover-color);
-    box-shadow: 0 2px 2px 2px gray;
-    transition-property: all;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
-    border-radius: 30px;
-    border: 2px solid var(--hover-color);
-     }
-/* nav{
+    border-radius: 20px;
+    border: 2px solid transparent; /*border initial state */
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-} */
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
 
+.project-card:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px; /* زيادة نصف القطر عند التمرير */
+    border: 2px solid var(--hover-color);
+    transform: translateY(-5px); /* تأثير بسيط عند التمرير */
+}
 
-/*end section projectis styleing*/
+.project-card-title h1 {
+    color: var(--text-color);
+    font-size: 1.5em; /* حجم مناسب لعنوان المشروع */
+    margin-bottom: 10px;
+}
 
+.project-card-description p {
+    color: var(--text-color);
+    font-size: 1em;
+    line-height: 1.5;
+}
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .home {
+        flex-direction: column;
+        padding-right: 20px; /* إزالة المسافة الجانبية للناف بار */
+    }
+    .slider-container, .home-content {
+        width: 90%;
+        max-width: none;
+    }
+    .navbar2 {
+        width: 80px; /* تصغير عرض السايدبار */
+        top: 60px; /* تعديل Top لتصغير حجم شريط التنقل العلوي */
+    }
+    .navdiv1 li {
+        margin-right: 15px;
+    }
+    .navbar1 {
+        padding: 8px 15px; /* تصغير البادينج */
+    }
+    .logo1 a {
+        font-size: 30px;
+    }
+    #footer, #profiles, section#projects {
+        padding-right: 20px; /* إزالة المسافة الجانبية */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar1 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    .navdiv1 {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .navdiv1 ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navdiv1 li {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .navdiv1 li a, .nav-button {
+        width: 100%;
+        text-align: left;
+        padding: 8px 0;
+    }
+    .navbar2 {
+        display: none; /* إخفاء السايدبار في الشاشات الصغيرة جداً */
+    }
+    .home, #profiles, section#projects, #footer {
+        padding-right: 20px; /* التأكد من عدم وجود مسافة جانبية للسايدبار */
+        padding-left: 20px;
+    }
+    .home-content .main-heading {
+        font-size: 2em;
+    }
+    .project-card {
+        width: 90%; /* عرض كامل تقريباً في الشاشات الصغيرة جداً */
+    }
+}
