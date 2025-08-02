@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addProduct</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+    <input type="text" placeholder="name">
+    <input type="text" placeholder="price">
+    <input type="text" placeholder="description">
+    <input type="text" placeholder="image">
+    <button>add</button>
+    </form>
+    <script>
+        var form=document.getElementById("form")
+        form.addEventListener("submit",function(e){
+            e.preventDefault()
+            var name=e.target[0].value
+            var price=e.target[1].value
+            var description=e.target[2].value
+            var image=e.target[3].value
+            var product={name,price,description,image}
+            fetch("https://asyut-eng-synd.vercel.app/api/products",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify(product)
+            })
+            .then(res=>res.json())
+            .then(data=>console.log(data))
+        })
+    </script>
+</body>
+</html>
