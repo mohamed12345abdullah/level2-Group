@@ -1,6 +1,6 @@
 // Image Slider Logic
 var index = 0;
-var sliderContainer = document.getElementById("image-slider"); // تم تغيير الـ ID هنا
+var sliderContainer = document.getElementById("image-slider"); 
 var images = sliderContainer.querySelectorAll("img"); 
 
 function nextImage(){
