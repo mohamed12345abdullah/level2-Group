@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // Image Slider Logic
 var index = 0;
 var sliderContainer = document.getElementById("image-slider"); 
@@ -46,3 +47,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+=======
+// // Get the bookmark element
+// const bookmark = document.getElementById("#bookmark");
+
+// // Add click event listener to toggle navigation
+// if (bookmark) {
+//     bookmark.addEventListener("click", () => {
+//         // Toggle bookmark active state
+//         bookmark.classList.toggle("active");
+        
+//         // Toggle navbar2 (sidebar)
+//         const navbar2 = document.querySelector(".navbar2");
+//         if (navbar2) {
+//             navbar2.classList.toggle("active");
+//         }
+        
+//         // Toggle navbar1 (main navbar)
+//         const navbar1 = document.querySelector(".navbar1");
+//         if (navbar1) {
+//             navbar1.classList.toggle("active");
+//         }
+//     });
+// }
+>>>>>>> Stashed changes
