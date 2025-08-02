@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< Updated upstream
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,4 +9,161 @@
 <body>
     
 </body>
+=======
+
+<head>
+    <meta charset="UTF-8">  
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+
+         form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgb(125, 136, 146);
+            border-radius: 10px;
+            background-color: #9db1c1;
+            width: 20%;
+            height: 450px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        form:hover{
+            scale:0.3s;
+            box-shadow: 0 8px 30px rgb(211, 217, 224);
+            border-radius: 30px;
+            background-color: #a6b2bc;
+            border: 1px solid #ccc;
+            width: 20%;
+            height:450px;
+            border: none;
+            box-shadow: 0 4px 15px rgb(125, 136, 146)   ;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgb(125, 136, 146);
+            background-color: #b7d3ea;
+            transition: all 0.3s;
+        }
+
+        input:hover {
+            scale: 0.3s;
+            box-shadow: 0 8px 30px rgb(211, 217, 224);
+            border-radius: 20px;
+            background-color: #aac7df;
+            border: 1px solid #ccc;
+            
+               }
+        label,h1 {
+         
+            color: #b7d3ea;
+          
+          
+            transition: all 0.3s;
+          
+            
+              }
+        label:hover ,h1:hover{
+            scale: 0.3s;
+        
+            color: #000;
+           
+            
+               }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius:   10px ;
+            background-color: #b7d3ea;
+           
+            color: rgb(116, 138, 144);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #aac7df;
+            scale: 0.3s;
+            box-shadow: 0 8px 30px rgb(211, 217, 224);
+            border-radius: 20px;
+            color: #000;
+            
+               }
+    </style>
+</head>
+
+<body>
+
+    
+    
+
+    <form id="SignUpForm" action="">
+        <h1>Sign Up</h1>
+        <label for="name">Name</label>
+        <input type="text" name="name"  placeholder="Enter your name" id="name">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter your email" id="email">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter your password" id="password">
+        <label for="">info </label>
+        <input type="number" name="info" placeholder="Enter your info" id="info">
+        <button type="submit">Sign Up</button>
+        <div id="result"></div>
+    </form>
+    
+
+
+
+    <script>
+        var form = document.getElementById("SignUpForm")
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault()
+            var name = document.querySelector("input[name='name']").value
+            var email = document.querySelector("input[name='email']").value
+            var password = document.querySelector("input[name='password']").value
+            var info = document.querySelector("input[name='info']").value
+            console.log(name, email, password, info)
+            var data = {
+                name,
+                email,
+                password,
+                info
+            }
+            var stringData = JSON.stringify(data)
+            console.log(stringData)
+            var res = await fetch("https://asyut-eng-synd.vercel.app/api/auth/register", {
+                method: "POST",
+                body: stringData,
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            var result = await res.json()
+            console.log(result)
+            var resultDiv = document.getElementById("result")
+            resultDiv.innerHTML = result.message
+        })
+
+
+    </script>
+
+
+
+
+</body>
+
+>>>>>>> Stashed changes
 </html>

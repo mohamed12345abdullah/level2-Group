@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            background-color: rgb(97,145, 216);
+        }
+        #products{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            width: 300px;
+            height: 500px;
+            padding: 100px;
+            border: 2px solid rgba(250, 246, 246, 0.281);
+            border-radius: 20px;
+            background-color:white;
+            box-shadow: 10px 15px 20px white;
+        }
+
+        #products>input{
+            display: flex;
+            justify-content:flex-start;
+            align-self: unset;
+            line-height: 30px;
+        }
+        header{
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+    <div id="prodctsContainor"></div>
+<form id="products">
+    <header>Enter the information of the product u want</header>
+<input type="text" placeholder="enter the productName" name="productName">
+<input type="text"  placeholder="enter the productPrice" name="productPrice">
+<input type="text"  placeholder="enter the ProductDescription" name="productDescription">
+<input type="text" placeholder="image" name="image">
+<input type="submit" value="upload">
+</form>
+
+<div id="result"></div>
+<body>
+    <script>
+             var products =document.getElementById("products")
+       products.addEventListener("submit",async function(event){
+            event.preventDefault()    
+            var productName =document.querySelector("input[name=productName]").value
+            var productPrice =document.querySelector("input[name=productPrice]").value
+            var ProductDescription =document.querySelector("input[name=productDescription]").value
+            var image=document.querySelector("input[name=image]").value
+            
+            console.log();
+            var data={
+            name:productName,
+            price:productPrice,
+            description:productDescription,
+            image:image
+            
+            }
+
+            var stringData=JSON.stringify(data)
+            console.log(stringData);
+
+            var res= await fetch("https://asyut-eng-synd.vercel.app/api/products",{
+                method:"POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: stringData
+            })  ; 
+
+            var result=await res.json()
+            console.log(result);
+            var resultDiv=document.getElementById("result")
+            resultDiv.innerHTML=result.message
+
+
+
+
+
+            
+            
+        })
+    </script>
+</body>
+</html>
