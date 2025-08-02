@@ -7,9 +7,9 @@
     --button-hover-color: #003d82;
     --button-active-color: #002b5b;
     --button-disabled-color: #ccc;
-    --hover-color: rgb(190, 220, 235); /* تم إضافة هذا المتغير */
+    --hover-color: rgb(190, 220, 235); 
 
-    /* Dark Mode Variables (يمكن تفعيلها بـ JavaScript) */
+   
     --dark-bg-color: #222;
     --dark-text-color: #eee;
     --dark-primary-color: #333;
@@ -35,7 +35,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Dark Mode styles (تُضاف عند تفعيل الكلاس 'dark-mode' على <body>) */
+
 body.dark-mode {
     background-color: var(--dark-bg-color);
     color: var(--dark-text-color);
@@ -50,7 +50,7 @@ body.dark-mode .navdiv1 i {
 }
 body.dark-mode .navdiv1 li a:hover,
 body.dark-mode .navdiv1 i:hover {
-    color: rgb(100, 150, 200); /* لون هوفر مختلف للوضع الداكن */
+    color: rgb(100, 150, 200); 
 }
 
 body.dark-mode .navbar2 {
@@ -82,7 +82,7 @@ body.dark-mode .mode-toggle .toggle-label {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 body.dark-mode .mode-toggle input:checked + .toggle-label {
-    background-color: #2196F3; /* لون مختلف عند التفعيل */
+    background-color: #2196F3; 
 }
 body.dark-mode .mode-toggle .toggle-ball {
     background-color: #eee;
@@ -92,7 +92,7 @@ body.dark-mode .mode-toggle input:checked + .toggle-label .toggle-ball {
 }
 
 body.dark-mode .home {
-    background-color: #2a3a4a; /* لون خلفية للوضع الداكن */
+    background-color: #2a3a4a; 
 }
 body.dark-mode .home-content p {
     color: var(--dark-text-color);
@@ -203,9 +203,9 @@ body.dark-mode #icons a:hover {
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s ease;
-    display: flex; /* لترتيب الأيقونة والنص */
+    display: flex; 
     align-items: center;
-    gap: 5px; /* مسافة بين الأيقونة والنص */
+    gap: 5px; 
 }
 
 .navdiv1 li a:hover {
@@ -226,7 +226,7 @@ body.dark-mode #icons a:hover {
 /* Styles for navigation buttons */
 .nav-button, .sidebar-button {
     background-color: var(--button-color);
-    color: rgb(0, 0, 0); /* لون نص الزر */
+    color: rgb(0, 0, 0); 
     border: none;
     border-radius: 10px;
     padding: 10px 15px;
@@ -235,20 +235,19 @@ body.dark-mode #icons a:hover {
     box-shadow: 0 4px 15px rgb(83, 91, 113, 0.2);
     transition: all 0.3s ease;
     cursor: pointer;
-    display: inline-block; /* لجعل الروابط تتصرف كأزرار */
+    display: inline-block; 
     text-align: center;
 }
 
 .nav-button:hover, .sidebar-button:hover {
     transform: scale(1.05);
     background-color: var(--button-hover-color);
-    color: white; /* لون نص الزر عند التمرير */
+    color: white; 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Adjust margin for buttons in navbar1 */
 .navdiv1 li .nav-button {
-    margin-left: 10px; /* مسافة إضافية بين عناصر التنقل والأزرار */
+    margin-left: 10px; 
 }
 
 /* ===== end NAVIGATION BAR 1 ===== */
@@ -261,10 +260,10 @@ body.dark-mode #icons a:hover {
     padding: 20px 10px;
     position: fixed;
     right: 0;
-    top: 70px; /* تحت navbar1 */
+    top: 70px; 
     height: calc(100vh - 70px);
     width: 120px;
-    z-index: 999; /* أقل من navbar1 لكن فوق المحتوى */
+    z-index: 999; 
     border: 1px solid rgb(59, 101, 145);
     border-radius: 10px;
     box-shadow: 0 8px 30px rgb(83, 91, 113, 0.2);
@@ -316,13 +315,13 @@ body.dark-mode #icons a:hover {
 
 /* ===== Settings Section ===== */
 .settings-section {
-    margin-top: auto; /* يدفع قسم الإعدادات إلى الأسفل */
+    margin-top: auto; 
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .settings-section label {
-    color: rgb(165, 212, 233); /* لون افتراضي للوضع الفاتح */
+    color: rgb(165, 212, 233); 
     font-size: 14px;
     font-weight: bold;
     display: block;
@@ -330,10 +329,10 @@ body.dark-mode #icons a:hover {
 }
 
 .language,
-.mode-toggle, /* تم تغيير .darkmode و .lightmode إلى .mode-toggle */
+.mode-toggle,
 .notifications {
     margin-bottom: 15px;
-    padding: 0 5px; /* لبعض المسافة الداخلية */
+    padding: 0 5px; 
 }
 
 .language input {
@@ -354,15 +353,15 @@ body.dark-mode #icons a:hover {
 
 /* ===== TOGGLE SWITCH (for Dark Mode) ===== */
 .mode-toggle input[type="checkbox"] {
-    display: none; /* إخفاء التشيك بوكس الأصلي */
+    display: none; 
 }
 
 .mode-toggle .toggle-label {
     cursor: pointer;
-    display: block; /* لتمكين الهامش التلقائي */
-    margin: 0 auto; /* توسيط المفتاح */
-    width: 60px; /* عرض أصغر للمفتاح */
-    height: 30px; /* ارتفاع أصغر */
+    display: block; 
+    margin: 0 auto; 
+    width: 60px; 
+    height: 30px; 
     border-radius: 15px;
     background-color: var(--primary-color);
     box-shadow: 0 4px 15px rgb(123, 128, 141, 0.2);
@@ -372,8 +371,8 @@ body.dark-mode #icons a:hover {
 
 .mode-toggle .toggle-ball {
     position: absolute;
-    width: 26px; /* حجم الكرة */
-    height: 26px; /* حجم الكرة */
+    width: 26px; 
+    height: 26px; 
     top: 2px;
     left: 2px;
     border-radius: 50%;
@@ -383,11 +382,11 @@ body.dark-mode #icons a:hover {
 }
 
 .mode-toggle input[type="checkbox"]:checked + .toggle-label {
-    background-color: #4CAF50; /* لون أخضر عند التفعيل */
+    background-color: #4CAF50; 
 }
 
 .mode-toggle input[type="checkbox"]:checked + .toggle-label .toggle-ball {
-    transform: translateX(30px); /* تحريك الكرة إلى اليمين */
+    transform: translateX(30px); 
 }
 
 
@@ -397,17 +396,17 @@ body.dark-mode #icons a:hover {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 80px 20px 20px; /* مسافة للناف بار العلوي */
+    padding: 80px 20px 20px; 
     background-color: rgb(166, 206, 234);
-    gap: 50px; /* مسافة بين السلايدر والمحتوى */
-    flex-wrap: wrap; /* للسماح بالعناصر بالانتقال إلى سطر جديد في الشاشات الصغيرة */
-    padding-right: 140px; /* مسافة للناف بار الجانبي */
+    gap: 50px; 
+    flex-wrap: wrap; 
+    padding-right: 140px; 
 }
 
 .slider-container {
-    width: 50%; /* عرض السلايدر */
+    width: 50%; 
     max-width: 600px;
-    height: 400px; /* ارتفاع ثابت للسلايدر */
+    height: 400px; 
     overflow: hidden;
     position: relative;
     border-radius: 20px;
@@ -422,8 +421,8 @@ body.dark-mode #icons a:hover {
     top: 0;
     left: 0;
     opacity: 0;
-    transform: translateY(-50px); /* تعديل قيمة التحويل الأولية */
-    transition: all 1s ease-in-out; /* انتقال سلس */
+    transform: translateY(-50px); 
+    transition: all 1s ease-in-out; 
 }
 
 .slider-container .event {
@@ -442,7 +441,7 @@ body.dark-mode #icons a:hover {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-    z-index: 10; /* لضمان ظهور الأزرار فوق الصور */
+    z-index: 10; 
 }
 
 .slider-container #right-button {
@@ -458,14 +457,14 @@ body.dark-mode #icons a:hover {
 }
 
 .home-content {
-    width: 40%; /* عرض محتوى النص */
+    width: 40%; 
     max-width: 500px;
     text-align: left;
     padding: 20px;
 }
 
 .home-content .main-heading {
-    font-size: 2.5em; /* حجم كبير للعنوان الرئيسي */
+    font-size: 2.5em; 
     font-weight: bold;
     color: var(--text-color);
     margin-bottom: 20px;
@@ -485,7 +484,7 @@ body.dark-mode #icons a:hover {
     padding: 50px 20px;
     background-color: rgb(114, 170, 216);
     text-align: center;
-    padding-right: 140px; /* مسافة للناف بار الجانبي */
+    padding-right: 140px; 
 }
 
 #profiles h1 {
@@ -502,11 +501,11 @@ body.dark-mode #icons a:hover {
 }
 
 .member-card {
-    margin: 20px; /* تقليل الهامش الخارجي */
+    margin: 20px; 
     padding: 28px 20px 20px 20px;
-    width: 220px; /* زيادة العرض قليلاً */
+    width: 220px; 
     text-align: center;
-    border: 2px solid var(--primary-color); /*border color from variable */
+    border: 2px solid var(--primary-color); 
     border-radius: 20px;
     background: #ffffff;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
@@ -548,8 +547,8 @@ body.dark-mode #icons a:hover {
 }
 
 .social-links a {
-    margin: 0 8px; /* زيادة المسافة بين الأيقونات */
-    font-size: 1.2em; /* حجم أكبر للأيقونات */
+    margin: 0 8px; 
+    font-size: 1.2em; 
     color: #333;
     transition: color 0.3s;
 }
@@ -571,7 +570,7 @@ body.dark-mode #icons a:hover {
     width: 100%;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding-right: 140px; /* مسافة للناف بار الجانبي */
+    padding-right: 140px; 
 }
 
 #footer a {
@@ -589,7 +588,7 @@ body.dark-mode #icons a:hover {
 #footer p {
     color: rgb(0, 0, 0);
     max-width: 800px;
-    margin: 15px auto; /* توسيط الفقرات */
+    margin: 15px auto; 
 }
 
 #icons {
@@ -614,15 +613,15 @@ body.dark-mode #icons a:hover {
 /* section projects styling */
 section#projects {
     padding: 50px 20px;
-    background-color: var(--secondary-color); /* لون خلفية من المتغيرات */
+    background-color: var(--secondary-color); 
     text-align: center;
-    padding-right: 140px; /* مسافة للناف بار الجانبي */
+    padding-right: 140px; 
 }
 
 section#projects > h1 {
     color: var(--text-color);
-    font-size: 2.2em; /* حجم مناسب للعنوان */
-    font-family: 'Cairo', Arial, sans-serif; /* خط مناسب للغة العربية */
+    font-size: 2.2em; 
+    font-family: 'Cairo', Arial, sans-serif; 
     font-weight: 700;
     margin-bottom: 40px;
 }
@@ -633,17 +632,17 @@ section#projects > h1 {
     justify-content: center;
     gap: 30px;
     padding: 20px;
-    background-color: var(--button-color); /* استخدام متغير للون الخلفية */
+    background-color: var(--button-color); 
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .project-card {
     width: 300px;
-    min-height: 150px; /* ارتفاع أدنى للبطاقة */
+    min-height: 150px; 
     background-color: var(--primary-color);
     border-radius: 20px;
-    border: 2px solid transparent; /*border initial state */
+    border: 2px solid transparent; 
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -656,14 +655,14 @@ section#projects > h1 {
 .project-card:hover {
     background-color: var(--hover-color);
     box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 30px; /* زيادة نصف القطر عند التمرير */
+    border-radius: 30px; 
     border: 2px solid var(--hover-color);
-    transform: translateY(-5px); /* تأثير بسيط عند التمرير */
+    transform: translateY(-5px); 
 }
 
 .project-card-title h1 {
     color: var(--text-color);
-    font-size: 1.5em; /* حجم مناسب لعنوان المشروع */
+    font-size: 1.5em; 
     margin-bottom: 10px;
 }
 
@@ -677,27 +676,27 @@ section#projects > h1 {
 @media (max-width: 992px) {
     .home {
         flex-direction: column;
-        padding-right: 20px; /* إزالة المسافة الجانبية للناف بار */
+        padding-right: 20px; 
     }
     .slider-container, .home-content {
         width: 90%;
         max-width: none;
     }
     .navbar2 {
-        width: 80px; /* تصغير عرض السايدبار */
-        top: 60px; /* تعديل Top لتصغير حجم شريط التنقل العلوي */
+        width: 80px; 
+        top: 60px; 
     }
     .navdiv1 li {
         margin-right: 15px;
     }
     .navbar1 {
-        padding: 8px 15px; /* تصغير البادينج */
+        padding: 8px 15px; 
     }
     .logo1 a {
         font-size: 30px;
     }
     #footer, #profiles, section#projects {
-        padding-right: 20px; /* إزالة المسافة الجانبية */
+        padding-right: 20px; 
     }
 }
 
@@ -729,16 +728,16 @@ section#projects > h1 {
         padding: 8px 0;
     }
     .navbar2 {
-        display: none; /* إخفاء السايدبار في الشاشات الصغيرة جداً */
+        display: none; 
     }
     .home, #profiles, section#projects, #footer {
-        padding-right: 20px; /* التأكد من عدم وجود مسافة جانبية للسايدبار */
+        padding-right: 20px; 
         padding-left: 20px;
     }
     .home-content .main-heading {
         font-size: 2em;
     }
     .project-card {
-        width: 90%; /* عرض كامل تقريباً في الشاشات الصغيرة جداً */
+        width: 90%; 
     }
 }
