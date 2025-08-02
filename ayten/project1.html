@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            background-color: rgb(97, 145, 216);
+        }
+
+        .containor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 300px;
+            height: 500px;
+            background-color: white;
+            margin: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 20px;
+            box-shadow: 10px 15px 20px white;
+            border: 1px solid rgba(255, 255, 255, 0.158);
+            text-align: center;
+
+        }
+
+        img {
+            box-sizing: border-box;
+            width: 89%;
+            height: 60%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <div class="containor">
+
+
+
+    </div>
+
+
+    <script>
+
+
+        var containor = document.querySelector(".containor")
+        console.log(containor);
+        
+
+
+        async function getData() {
+            var result = await fetch("https://asyut-eng-synd.vercel.app/api/products")
+
+
+            var response = await result.json()
+
+
+
+                   var products = response.data
+                console.log(products);
+            console.log(response);
+            for (let index = 0; index < products.length; index++) {
+                containor.innerHTML += `<div class="box">
+            <img src="${products[index].image}" alt="product ${products[index]}">
+        <p>price: ${products[index].price}</p>
+        <p>productName:${products[index].title}</p>
+        <p>productDescription: ${products[index].body}</p>
+        <button>buy</button>
+
+    ${index}</div>`
+             
+            }
+
+
+            if (result.ok) {
+                console.log("success");
+
+
+
+            } else {
+                console.log("failed");
+            }
+            var div = document.getElementById(".containor")
+
+
+        }
+
+        getData()
+
+    </script>
+</body>
+
+</html>

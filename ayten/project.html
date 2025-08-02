@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calcContainor {
+            width: 100px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-content: end;
+            margin: auto;
+            padding: 90px;
+            background-color: bisque;
+
+        }
+    </style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div id="calcContainor">
+        <div class="screen"></div>
+        <div class="buttons">
+            <button onclick="clickButton(1)">1</button>
+            <button onclick="clickButton(2)">2</button>
+            <button onclick="clickButton(3)">3</button>
+            <button onclick="clickButton(4)">4</button>
+            <button onclick="clickButton(5)">5</button>
+            <button onclick="clickButton(6)">6</button>
+            <button onclick="clickButton(7)">7</button>
+            <button onclick="clickButton(8)">8</button>
+            <button onclick="clickButton(9)">9</button>
+            <button onclick="clickButton(0)">0</button>
+            <button onclick="clickButton('+')">+</button>
+            <button onclick="clickButton('-')">-</button>
+            <button onclick="clickButton('*')">*</button>
+            <button onclick="clickButton('/')">/</button>
+            <button onclick="equal()">=</button>
+            <button onclick="delet()">c</button>
+            <button onclick="clickButton('%')">%</button>
+            <button onclick="clickButton('#')">#</button>
+
+
+        </div>
+
+    </div>
+    <script>
+        var screen = document.querySelector(".screen")
+        function clickButton(num) {
+            console.log(num);
+            screen.innerHTML += num
+
+
+        }
+
+
+
+
+        function equal() {
+            var x = "";
+            x = screen.innerHTML
+            console.log("second function")
+            screen.innerHTML = (eval)(x);
+        }
+        function delet() {
+            console.log("clear");
+            screen.innerHTML = ""
+        }
+    </script>
+</body>
+
+</html>
