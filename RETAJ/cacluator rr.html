@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.nah{
+
+margin-bottom: 10px;
+justify-content: center;
+
+
+}
+
+.container{
+      width: 100px;
+      background-color: aquamarine;
+     
+     
+    
+}
+#the div{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+}
+
+
+ 
+
+
+    </style>
+</head>
+<body >
+    <div id="the div">
+    <div class="container">
+<div class="screen" ></div>
+<div   class="button"></div>
+<button class="nah" onclick="clickButton(1)">1</button>
+<button  class="nah" onclick="clickButton(2)">2</button>
+<button  class="nah"onclick="clickButton(3)">3</button>
+<button  class="nah"onclick="clickButton(4)">4</button>
+<button class="nah" onclick="clickButton(5)">5</button>
+<button  class="nah" onclick="clickButton(6)">6</button>
+<button  class="nah" onclick="clickButton(7)">7</button>
+<button  class="nah" onclick="clickButton(8)">8</button>
+<button  class="nah" onclick="clickButton(9)">9</button>
+<button  class="nah" onclick="clickButton('+')">+</button>
+<button  class="nah" onclick="clickButton('-')">-</button>
+<button  class="nah" onclick="clickButton('*')">*</button>
+<button  class="nah" onclick="del('c')">c</button>
+<button  class="nah" onclick="equal()('=')">=</button>
+
+
+
+    </div>
+    </div>
+
+    <script>
+var screen=document.querySelector(".screen")
+function clickButton(num){
+
+console.log(num);
+screen.innerHTML+=num
+
+}
+function equal(){
+var s="";
+s=screen.innerHTML;
+console.log(s);
+
+screen.innerHTML= eval(s);
+
+}
+function del(){
+console.log(del);
+screen.innerHTML="";
+
+
+}
+
+    </script>
+    
+</body>
+</html>
