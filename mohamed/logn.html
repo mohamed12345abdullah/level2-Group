@@ -114,10 +114,12 @@
     })
     console.log(result);
     var resultDiv=document.getElementById("result")
-
     console.log(result);
     var response=await result.json()
     console.log(response);
+    localStorage.setItem("token",response.token)
+    localStorage.setItem("user", JSON.stringify(response.user))
+    location.href="./profile.html"
     resultDiv.innerHTML=response.message
     console.log(response);
     if(result.ok){

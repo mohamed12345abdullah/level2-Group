@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 30% ;
+            border: 2pt solid black;
+            padding: 5px;
+            height: 350px;
+            background-color: gray;
+            border-radius: 10px;
+            box-shadow: 0px 2px 2px 2px rgba(147, 154, 218, 0.589);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>profile</h1>
+        <p id="name">name:</p>
+        <p id="email">email:</p>
+        <p id="info">info:</p>
+    </div>
+    <script>
+        var user=JSON.parse(localStorage.getItem("user"))
+        console.log(user);
+        document.getElementById("name").innerHTML=user.name
+        document.getElementById("email").innerHTML=user.email
+        document.getElementById("info").innerHTML=user.info
+    </script>
+</body>
+</html>
