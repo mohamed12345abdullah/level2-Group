@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* styling of log in form */
+        :root {
+            background-color: rgb(116, 167, 201);
+        }
+
+        #Form {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+            background-color: rgb(255, 255, 255);
+            padding: 0 80px 0 80px;
+            border: 2px solid rgba(230, 227, 227, 0.466);
+            width: 30%;
+            height: 90%;
+            border-radius: 20px;
+            box-shadow: 10px 15px 17px  white;
+            margin: auto;
+            text-align: center;
+            transition: all 0.3s;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+      .password-requirments{
+     background-color: #a93cd84f;
+        border: 2px solid #a93cd821;
+        width:max-content ;
+        height: 190px;
+        padding-left: 10px;
+        color: #4a0866d7;
+        border-radius: 13px;
+        line-height: 27px;
+      text-align: left;
+    }
+    ul{
+        text-align: left;
+        justify-self: unset;
+       align-self: flex-start;
+       padding-left: 9px;
+    }
+
+        #Form:hover {
+            transition: all 0.3s;
+            transform: scale(1.05);
+        }
+
+        #Form>.header {
+            align-self: center;
+            justify-self: start;
+            font-size: 22px;
+            text-align: start;
+            color: rgb(180, 224, 244);
+
+
+        }
+
+
+
+
+        form>label {         
+          
+            
+            font-size: 30px;
+            display: flex;
+            justify-content: start;
+            align-content: flex-start;
+            flex-direction: column;
+            text-align: left;
+            color: rgb(98, 202, 243);
+            padding-left: 0px;
+
+        }
+
+        form>input {
+    
+    
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 30px;
+            border: 2px solid rgba(80, 145, 206, 0.548);
+            width: 300px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            padding-left: 10px;
+        }
+
+
+        #button {
+            display: flex;
+
+            text-align: center;
+
+          height:80px ;
+            margin: auto;
+            padding: 30px;
+
+            border-radius: 40px;
+            width: 290px;
+            transition: all 0.3s;
+            background-color: rgb(158, 147, 231);
+
+        }
+
+        #button:hover {
+            transition: all 0.3s;
+            transform: scale(1.05);
+
+        }
+
+
+
+
+        .link {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            font-size: 20px;
+        }
+
+
+
+
+        /* end styling of log in form */
+    </style>
+</head>
+
+<body>
+    <div>
+
+
+
+        <form id="Form">
+            <div class="header">
+                <h1>Join Our Team</h1>
+            </div>
+            <label class="user">Username</label>
+            <input type="text" name="username" id="user" placeholder="Username">
+            <label class="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="please Enter The Email">
+            <label class="pass">Password</label>
+            <input type="password" name="password" id="password" placeholder="Please Enter The Password">
+            <div class="password-requirments">
+            <strong>password requirments:</strong>
+            <ul>
+
+                <li> Minimum 8 Characters </li>
+
+
+
+                <li>At least one UpperCase letter</li>
+
+
+
+
+                <li>At least one LowerCase letter</li>
+
+
+
+
+                <li> At least one number </li>
+
+                <li>At least one special character(@,#,^,*-,_,!)</li>
+
+            </ul>
+        </div>
+            <label class="confirm">Confirm Password</label>
+            <input type="password" name="confirmPassword" id="pass" placeholder="confirmPassword">
+            <label class="info.">information</label>
+            <input type="text" name="information" id="info" placeholder="tell us infotrmation about you!">
+            <input type="submit" value="join team" id="button">
+
+            <a class="link"
+                href="c:\Users\Electronica Care\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\A02FFD91ECE5E7EFEB46DB8F10A74059\index.html">
+              Have an account? Sign in</a>
+            <div id="message"></div>
+        </form>
+    </div>
+</body>
+<script>
+    var Form = document.getElementById("Form")
+    Form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        var username = document.querySelector("input[name='username']").value
+        console.log(username);
+
+        var email = document.querySelector("input[name=email]").value
+        var password = document.querySelector("input[name=password]").value
+        var confirmPassword = document.querySelector("input[name=confirmPassword]").value
+        var information = document.querySelector("input[name= information]").value
+        console.log(username, email, password, confirmPassword, information);
+
+        var data = {
+            name: username,
+            email: email,
+            password: password,
+            info: information
+        }
+
+        var stringData = JSON.stringify(data)
+        console.log(data);
+
+        console.log(stringData);
+
+        var res = await fetch("https://asyut-eng-synd.vercel.app/api/auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: stringData
+
+
+        });
+
+        var result = await res.json()
+        console.log(result);
+
+
+        var messageDiv = document.getElementById("message")
+        messageDiv.innerHTML = result.message
+        console.log(messageDiv);
+    })
+</script>
+
+</html>
