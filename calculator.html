@@ -11,30 +11,39 @@
             align-items: center;
             justify-content: center;
             gap: 20px;
+    
+            border-radius: 10px;
         }
         .screen{
-            width: 200px;
+            margin-top: 20px;
+            width: 190px;
             height: 50px;
-            border: 3px solid #e706b6;
-            border-radius: 5px;
+            border: 3px solid #bbb6bada;
+            border-radius: 10px;
             padding: 10px;
             text-align: right;
-            color: #e706b6;
+            color: #faf7f9;
+            background-color: #5c595c;
         }
         .buttons{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
+            border-radius: 10px;
+            background-color: #5c595c;
         }
         button{
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             border: none;
-            background-color: #f113d4;
+            background-color: #ffeeff6b;
             cursor: pointer;
         }
         button:hover{
+            background-color: #f3ebeb;
+        }
+        button:active{
             background-color: #f3ebeb;
         }
 
@@ -44,23 +53,24 @@
     <div id="calculator-container">
         <div class="screen"></div>
         <div class="buttons">
-            <button onclick="clickButton(1)">1</button>
-            <button onclick="clickButton(2)">2</button>
-            <button onclick="clickButton(3)">3</button>
-            <button onclick="clickButton('+')">+</button>
-            <button onclick="clickButton(4)">4</button>
-            <button onclick="clickButton(5)">5</button>
-            <button onclick="clickButton(6)">6</button>
-            <button onclick="clickButton('-')">-</button>
-            <button onclick="clickButton(7)">7</button>
-            <button onclick="clickButton(8)">8</button>
-            <button onclick="clickButton(9)">9</button>
-            <button onclick="clickButton('*')">*</button>
-            <button onclick="clickButton(0)">0</button>
-            <button onclick="clickButton('.')">.</button>
-            <button onclick="clickButton('/')">/</button>
-            <button onclick="equal()">=</button>
-            <button onclick="del()">C</button>
+            <button onclick="clickButton(1)"> 1 </button>
+            <button onclick="clickButton(2)"> 2 </button>
+            <button onclick="clickButton(3)"> 3 </button>
+            <button onclick="clickButton('+')"> + </button>
+            <button onclick="clickButton(4)"> 4 </button>
+            <button onclick="clickButton(5)"> 5 </button>
+            <button onclick="clickButton(6)"> 6 </button>
+            <button onclick="clickButton('-')"> - </button>
+            <button onclick="clickButton(7)"> 7 </button>
+            <button onclick="clickButton(8)"> 8 </button>
+            <button onclick="clickButton(9)"> 9 </button>
+            <button onclick="clickButton('*')"> * </button>
+            <button onclick="clickButton(0)"> 0 </button>
+            <button onclick="clickButton('.')"> . </button>
+            <button onclick="clickButton('/')"> / </button>
+            <button onclick="equal()"> = </button>
+            <button onclick="clear()"> C </button>
+            <button onclick="del()"> del </button>
         </div>
     </div>
     <script>
@@ -78,9 +88,13 @@
             
         
         }
-        function del(){
+        function clear(){
             screen.innerHTML="";
         }
+        function del(){
+            screen.innerHTML=screen.innerHTML.slice(0,screen.innerHTML.length-1);
+        }
+        
        
 
         
