@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <h1>ElegantChoice</h1>
+        <form action="">
+
+
+
+            <label for="search-input"><i class="fa-solid fa-magnifying-glass"></i></label>
+
+            <input id="search-input" type="text" placeholder="Search">
+
+
+
+
+            <div class="select">
+                <select name="select-options" id="filter">
+                    <option value="">All</option>
+                    <option value="">Cloths</option>
+                    <option value="">Shoes</option>
+                    <option value="">Jewelry</option>
+
+                    <option value="">Watches</option>
+                    <option value="">Bags</option>
+                    <option value="">Accessories</option>
+
+                </select>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+        </form>
+        <div id="options-container">
+            <ul id="options-list"></ul>
+        </div>
+
+    </header>
+
+    <nav id="navbar1">
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="link-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <i class="fa-solid fa-xmark"></i>
+                <h1>ElegantChoice</h1>
+
+
+
+            </label>
+
+
+            <a href=""><i class="fa-solid fa-house"></i> home</a>
+            <a href=""><i class="fa-solid fa-circle-user"></i> profile</a>
+
+            <a href=""><i class="fa-solid fa-shirt"></i>cloths</a>
+            <a href=""><i class="fa-solid fa-shoe-prints"></i>shoes</a>
+            <a href=""><i class=" fa fa-diamond fa-lg"></i>jewelry</a>
+
+            <a href=""><i class="fa-solid fa-clock"></i>watches</a>
+            <a href=""><i class="fa-solid fa-bag-shopping"></i> bags</a>
+            <a href=""><i class="fa fa-diamond fa-lg"></i>accessories</a>
+            <button class="btn-signin"><a href=""> sign in</a></button>
+            <button class="btn-signup"><a href="">sign up</a></button>
+
+
+
+
+
+
+        </div>
+        <nav>
+
+            <h1>ElegantChoice</h1>
+            <a href=""> <i class="fa-solid fa-house"></i> home</a>
+            <a href=""> <i class="fa-solid fa-circle-user"></i> profiles</a>
+            <a href=""> <i class="fa-solid fa-shirt"></i>cloths</a>
+            <a href=""> <i class="fa-solid fa-shoe-prints"></i>shoes</a>
+            <a href=""> <i class="fa fa-diamond fa-lg"></i>jewelry</a>
+
+            <a href=""> <i class="fa-solid fa-clock"></i>watches</a>
+            <a href=""> <i class="fa-solid fa-bag-shopping"></i> bags</a>
+            <a href=""> <i class="fa fa-diamond" aria-hidden="true"></i>accessories</a>
+            <button class="btn-signin"><a href=""> sign in</a></button>
+            <button class="btn-signup"><a href="">sign up</a></button>
+
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </nav>
+
+    <main>
+        <section id="products">
+            <div id="product">
+                <h1>products</h1>
+
+
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <h2> Info About the website </h2>
+        <p> our team made this website about to have pretty shopping experaience in our website </p>
+        <h3>team  is containe  member their names is Haneen ,Retaj ,Adham,Ahmad,Ayten</h3>
+        <h2>How to buy :</h2>
+        <p>by visa or inesta pay </p>
+        <h2>Your review about website</h2>
+        <h2>our acount in media</h2>
+        <i></i>
+        <div class="icons">
+            <a href=""><i class="fa-brands fa-instagram"></i> instegram</i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i> linken</i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i> facebook</i></a>
+            
+            <a href=""><i class="fa-brands fa-twitter"></i> twatter</i></a>
+        </div>
+
+
+
+
+
+
+
+
+
+    </footer>
+    <script>
+        var container = document.getElementById('products');
+        console.log(container);
+        async function fetchData() {
+            var result = await fetch('https://asyut-eng-synd.vercel.app/api/products')
+            var response = await result.json();
+            console.log(result);
+            console.log(response);
+            let products = response.data;
+            console.log(products);
+
+            let html = '';
+            products.forEach(product => {
+                html += `
+
+        <div id="product">
+                <img src="${product.image}" alt="">
+                <h2>${product.name}</h2>
+                <p>${product.price}</p>
+                <p>${product.description}</p>
+                <button>Buy now</button>
+            </div>
+        
+        `;
+            });
+            container.innerHTML = html;
+            if (result.ok) {
+                console.log('success');
+            }
+            else {
+                console.log('error');
+            }
+
+            console.log(response);
+
+        }
+        // form js
+        fetchData();
+        let form = document.getElementById('product');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let name = form.name.value;
+            let price = form.price.value;
+            let description = form.description.value;
+            let image = form.image.value;
+            let product = {
+                name: name,
+                price: price,
+                description: description,
+                image: image
+            }
+            let string = JSON.stringify(product);
+            fetch('https://asyut-eng-synd.vercel.app/api/products', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: stringData
+
+            }).then(function () {
+                return respon(parameter => {
+                    console.log(parameter);
+                })
+            }).then(function (data) {
+                return data.json();
+
+            }).then(function (data) {
+                console.log(data.data);
+            })
+
+
+            console.log(name, price, description, image);
+        }) 
+        getData()
+    </script>
+
+
+</body>
+
+</html>
