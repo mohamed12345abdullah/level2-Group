@@ -60,3 +60,4 @@ function prevImage() {
 
 // Initial display for the first image
 showImage(currentImageIndex);
+//fnhjm,k
