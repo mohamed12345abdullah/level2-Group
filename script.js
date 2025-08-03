@@ -45,22 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'light');
         }
     });
-<<<<<<< Updated upstream
-}
-
-function nextImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    showImage(currentImageIndex);
-}
-
-function prevImage() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    showImage(currentImageIndex);
-}
-
-// Initial display for the first image
-showImage(currentImageIndex);
-//fnhjm,k
-=======
 });
->>>>>>> Stashed changes
