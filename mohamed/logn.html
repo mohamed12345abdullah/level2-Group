@@ -114,12 +114,19 @@
     })
     console.log(result);
     var resultDiv=document.getElementById("result")
+<<<<<<< Updated upstream
     console.log(result);
     var response=await result.json()
     console.log(response);
     localStorage.setItem("token",response.token)
     localStorage.setItem("user", JSON.stringify(response.user))
     location.href="./profile.html"
+=======
+
+    console.log(result);
+    var response=await result.json()
+    console.log(response);
+>>>>>>> Stashed changes
     resultDiv.innerHTML=response.message
     console.log(response);
     if(result.ok){
