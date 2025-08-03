@@ -1230,9 +1230,7 @@ section#projects>h1 {
     border: 2px solid var(--hover-color);
 }
 
-/* nav{
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+ nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1261,7 +1259,7 @@ section#projects>h1 {
     line-height: 1.5;
 }
 
-/* Responsive adjustments */
+ Responsive adjustments */
 /* @media (max-width: 992px) {
     .home {
         flex-direction: column;
@@ -1276,7 +1274,7 @@ section#projects>h1 {
         top: 60px; 
     }
     .navdiv1 li {
-        margin-right: 15px;
+\        margin-right: 15px;
     }
     .navbar1 {
         padding: 8px 15px; 
