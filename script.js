@@ -1,73 +1,62 @@
-<<<<<<< Updated upstream
-// Image Slider Logic
-var index = 0;
-var sliderContainer = document.getElementById("image-slider"); 
-var images = sliderContainer.querySelectorAll("img"); 
+// Get the sidebar toggle checkbox and the overlay
+const sidebarToggle = document.getElementById("sidebar-toggle");
+const overlay = document.getElementById("overlay");
+const themeSwitch = document.getElementById("theme-switch");
 
-function nextImage(){
-    images[index].classList.remove("event");
-    index++;
-    if(index >= images.length){
-        index = 0; 
+// Function to toggle sidebar visibility and overlay
+function toggleSidebar() {
+    // The sidebar visibility is controlled by the checkbox's :checked state
+    // and associated CSS rules. No direct JS class toggling needed on navbar itself.
+    if (sidebarToggle.checked) {
+        overlay.style.display = "block"; // Show overlay
+    } else {
+        overlay.style.display = "none"; // Hide overlay
     }
-    images[index].classList.add("event");
-}
-function prevImage(){
-    images[index].classList.remove("event");
-    index--;
-    if(index < 0){
-        index = images.length - 1;
-    }
-    images[index].classList.add("event");
 }
 
-// Optional: Auto-play slider (uncomment to activate)
-// setInterval(function() {
-//     nextImage();
-// }, 3000); // Change image every 3 seconds
+// Add event listener to the sidebar toggle checkbox
+if (sidebarToggle) {
+    sidebarToggle.addEventListener("change", toggleSidebar);
+}
 
-// Dark Mode Toggle Logic
-document.addEventListener('DOMContentLoaded', function() {
-    const themeSwitch = document.getElementById('theme-switch');
-    const body = document.body;
+// Add event listener to the overlay to close the sidebar when clicked
+if (overlay) {
+    overlay.addEventListener("click", () => {
+        sidebarToggle.checked = false; // Uncheck the sidebar toggle
+        toggleSidebar(); // Update overlay display
+    });
+}
 
-    // Check for saved theme preference
-    if (localStorage.getItem('theme') === 'dark') {
-        body.classList.add('dark-mode');
-        themeSwitch.checked = true;
-    }
+// Dark Mode Toggle
+if (themeSwitch) {
+    themeSwitch.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+    });
+}
 
-    themeSwitch.addEventListener('change', function() {
-        if (this.checked) {
-            body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
+// Image Slider functionality (original code, assumed to work as intended)
+let currentImageIndex = 0;
+const images = document.querySelectorAll('#image-slider img');
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        if (i === index) {
+            img.classList.add('event');
         } else {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
+            img.classList.remove('event');
         }
     });
-});
-=======
-// // Get the bookmark element
-// const bookmark = document.getElementById("#bookmark");
+}
 
-// // Add click event listener to toggle navigation
-// if (bookmark) {
-//     bookmark.addEventListener("click", () => {
-//         // Toggle bookmark active state
-//         bookmark.classList.toggle("active");
-        
-//         // Toggle navbar2 (sidebar)
-//         const navbar2 = document.querySelector(".navbar2");
-//         if (navbar2) {
-//             navbar2.classList.toggle("active");
-//         }
-        
-//         // Toggle navbar1 (main navbar)
-//         const navbar1 = document.querySelector(".navbar1");
-//         if (navbar1) {
-//             navbar1.classList.toggle("active");
-//         }
-//     });
-// }
->>>>>>> Stashed changes
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    showImage(currentImageIndex);
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    showImage(currentImageIndex);
+}
+
+// Initial display for the first image
+showImage(currentImageIndex);
