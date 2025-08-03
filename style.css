@@ -48,10 +48,15 @@ body.dark-mode .navdiv1 li a,
 body.dark-mode .navdiv1 i {
     color: var(--dark-text-color);
 }
+body>.dark-mode>i{
+   color: var(--dark-primary-color);
+}
+
 body.dark-mode .navdiv1 li a:hover,
 body.dark-mode .navdiv1 i:hover {
-    color: rgb(100, 150, 200); 
+    color: rgb(96, 203, 230); 
 }
+
 
 body.dark-mode .navbar2 {
     background-color: var(--dark-primary-color);
@@ -571,6 +576,7 @@ body.dark-mode #icons a:hover {
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding-right: 140px; 
+    
 }
 
 #footer a {

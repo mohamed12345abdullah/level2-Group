@@ -22,11 +22,13 @@
             transition: 2s linear;
         }
         html{
-            font-size: 62.5%;
             scroll-behavior: smooth;
+            font-size: 62.5%;
             scroll-padding-top: 6rem;
             overflow-x: hidden;
         }
+     
+        
         header{
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -54,26 +56,50 @@
         }
 header>.navbar>a:hover{
     color: rgb(255, 255, 255);
+    transition: all 0.4s;
 }
 
-header> 
+header>.icons>i{
+    font-size: 2.5rem;
+    color: black;
+    margin-left: 1.5rem;
+}
+header>.icons>i:hover{
+    color: white ;
+    transition: all 1s;
+}
+header>.fa-bars{
+    font-size:2.5rem;
+    color: black;
+    border-radius: .5rem;
+    padding: 0.5rem 5rem;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+
+
+
+
 
     </style>
 </head>
 
 <body>
     <header>
+        
+        <label for="toggler" class="fa-solid fa-bars"></label>
        <a href="#" class="logo">ElegentChoice<span>.</div></span></a> 
        <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="./project3.html">Home</a>
+        <a href="./project4.html">About</a>
         <a href="#reviews">Reviews</a>
         <a href="#Contact">Contact</a>
         <a href="#Products">products</a>
        </nav>
   <div class="icons">
     <i class="fa-solid fa-cart-shopping"></i>
-    <i class="fa-solid fa-heart"></i>
+  <i class="fa-solid fa-heart"> <a href="./ayten/favorites.html"> </a></i>
     <i class="fa-solid fa-user"></i>
     </div>
       </header>
