@@ -7,8 +7,9 @@
     --button-hover-color: #003d82;
     --button-active-color: #002b5b;
     --button-disabled-color: #ccc;
-    --hover-color: rgb(190, 220, 235);
+    --hover-color: rgb(190, 220, 235); 
 
+   
     --dark-bg-color: #222;
     --dark-text-color: #eee;
     --dark-primary-color: #333;
@@ -16,21 +17,12 @@
 }
 
 /* ===== GLOBAL STYLES ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
 html {
-    font-size: 12px;
-    font-family: 'poppins', 'Segoe UI', 'Tahoma', sans-serif;
     scroll-behavior: smooth;
-    min-height: 100vh;
 }
 
 body {
+    margin: 0;
     min-height: 100vh;
     font-family: 'Calibri', sans-serif;
     background-color: var(--secondary-color);
@@ -38,50 +30,49 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode Styles */
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
 body.dark-mode {
     background-color: var(--dark-bg-color);
     color: var(--dark-text-color);
 }
 
-body.dark-mode .main-navbar {
+body.dark-mode .navbar1 {
     background-color: var(--dark-primary-color);
 }
-
-body.dark-mode .main-navbar .nav-links li a,
-body.dark-mode .main-navbar .nav-links li a i {
+body.dark-mode .navdiv1 li a,
+body.dark-mode .navdiv1 i {
     color: var(--dark-text-color);
 }
-
-body.dark-mode .main-navbar .nav-links li a:hover {
-    color: rgb(100, 150, 200);
+body.dark-mode .navdiv1 li a:hover,
+body.dark-mode .navdiv1 i:hover {
+    color: rgb(100, 150, 200); 
 }
 
-body.dark-mode .sidebar-navbar {
+body.dark-mode .navbar2 {
     background-color: var(--dark-primary-color);
     border-color: var(--dark-secondary-color);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
-
-body.dark-mode .sidebar-navbar .sidebar-links a {
+body.dark-mode .navdiv2 a {
     color: var(--dark-text-color);
 }
-
-body.dark-mode .logo a,
-body.dark-mode .sidebar-navbar .sidebar-links a:hover {
+body.dark-mode .logo2 a {
     color: rgb(150, 190, 210);
 }
-
-body.dark-mode .settings-section label {
+body.dark-mode .language label,
+body.dark-mode .notifications label {
     color: var(--dark-text-color);
 }
-
 body.dark-mode .language input {
     background-color: var(--dark-secondary-color);
     color: var(--dark-text-color);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-
 body.dark-mode .language input:hover {
     background-color: #555;
 }
@@ -90,71 +81,58 @@ body.dark-mode .mode-toggle .toggle-label {
     background-color: var(--dark-secondary-color);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-
 body.dark-mode .mode-toggle input:checked + .toggle-label {
-    background-color: #2196F3;
+    background-color: #2196F3; 
 }
-
 body.dark-mode .mode-toggle .toggle-ball {
     background-color: #eee;
 }
-
 body.dark-mode .mode-toggle input:checked + .toggle-label .toggle-ball {
     background-color: white;
 }
 
 body.dark-mode .home {
-    background-color: #2a3a4a;
+    background-color: #2a3a4a; 
 }
-
-body.dark-mode .home-content p,
-body.dark-mode .home-content .main-heading {
+body.dark-mode .home-content p {
     color: var(--dark-text-color);
 }
 
 body.dark-mode .team-container {
     background-color: #3b4d5e;
 }
-
 body.dark-mode .member-card {
     background: var(--dark-secondary-color);
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
     border-color: var(--dark-primary-color);
 }
-
 body.dark-mode .member-photo {
     border-color: var(--dark-text-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-
 body.dark-mode .member-bio,
 body.dark-mode .social-links a {
     color: var(--dark-text-color);
 }
-
 body.dark-mode .social-links a:hover {
     color: rgb(150, 190, 210);
 }
 
-body.dark-mode #projects .section-title {
+body.dark-mode #projects h1 {
     color: var(--dark-text-color);
 }
-
 body.dark-mode .projects-grid {
     background-color: var(--dark-secondary-color);
 }
-
 body.dark-mode .project-card {
     background-color: var(--dark-primary-color);
     border-color: var(--dark-secondary-color);
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
-
 body.dark-mode .project-card:hover {
     background-color: var(--hover-color);
     border-color: var(--hover-color);
 }
-
 body.dark-mode .project-card-title h1,
 body.dark-mode .project-card-description p {
     color: var(--dark-text-color);
@@ -165,40 +143,36 @@ body.dark-mode #footer {
     background-color: var(--dark-primary-color);
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
 }
-
 body.dark-mode #footer p {
     color: var(--dark-text-color);
 }
-
 body.dark-mode #footer a {
     color: rgb(150, 190, 210);
 }
-
 body.dark-mode #footer a:hover {
     color: rgb(100, 150, 200);
 }
-
 body.dark-mode #icons a {
     color: var(--dark-text-color);
 }
-
 body.dark-mode #icons a:hover {
     color: rgb(150, 190, 210);
 }
 
 
-/* ===== Main Navigation Bar ===== */
-.main-navbar {
+/* ===== nav bar styling ===== */
+/* ===== NAVIGATION BAR 1 ===== */
+.navbar1 {
     background-color: var(--primary-color);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.main-navbar .nav-content {
+.navdiv1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -206,13 +180,13 @@ body.dark-mode #icons a:hover {
     margin: 0 auto;
 }
 
-.logo a {
+.logo1 a {
     font-size: 36px;
     font-weight: 600;
     color: rgb(180, 224, 244);
 }
 
-.main-navbar .nav-links {
+.navdiv1 ul {
     display: flex;
     list-style: none;
     margin: 0;
@@ -220,130 +194,98 @@ body.dark-mode #icons a:hover {
     align-items: center;
 }
 
-.main-navbar .nav-links li {
+.navdiv1 li {
     margin-right: 25px;
 }
 
-.main-navbar .nav-links li a {
+.navdiv1 li a {
     color: rgb(22, 22, 22);
     font-size: 18px;
     font-weight: bold;
     transition: color 0.3s ease;
-    display: flex;
+    display: flex; 
     align-items: center;
-    gap: 5px;
+    gap: 5px; 
 }
 
-.main-navbar .nav-links li a:hover {
+.navdiv1 li a:hover {
     color: rgb(165, 209, 234);
 }
 
-.main-navbar .nav-links i {
+.navdiv1 i {
     color: black;
     width: 20px;
     height: 20px;
     transition: color 0.3s ease;
 }
 
-.main-navbar .nav-links i:hover {
+.navdiv1 i:hover {
     color: rgb(165, 209, 234);
 }
 
-/* Button-style links */
-.nav-button,
-.sidebar-button {
-    background-color: hsl(200, 33%, 58%);
-    color: var(--text-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 15px rgb(102, 108, 125);
-    text-decoration: none;
-    display: inline-block;
-    margin: 5px 0;
-    transition: background-color 0.3s ease;
+/* Styles for navigation buttons */
+.nav-button, .sidebar-button {
+    background-color: var(--button-color);
+    color: rgb(0, 0, 0); 
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgb(83, 91, 113, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
 }
 
-.nav-button:hover,
-.sidebar-button:hover {
+.nav-button:hover, .sidebar-button:hover {
+    transform: scale(1.05);
     background-color: var(--button-hover-color);
-    color: white;
+    color: white; 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.nav-button:active,
-.sidebar-button:active {
-    transform: scale(0.95);
-    background-color: var(--button-active-color);
+.navdiv1 li .nav-button {
+    margin-left: 10px; 
 }
 
-/* ===== Sidebar Navigation ===== */
-.sidebar-navbar {
+/* ===== end NAVIGATION BAR 1 ===== */
+
+/* ===== NAVIGATION BAR 2 (SIDEBAR) ===== */
+.navbar2 {
     display: flex;
     flex-direction: column;
     background-color: rgb(148, 172, 188);
     padding: 20px 10px;
     position: fixed;
     right: 0;
-    top: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 1001; /* Higher than main-navbar */
+    top: 70px; 
+    height: calc(100vh - 70px);
+    width: 120px;
+    z-index: 999; 
     border: 1px solid rgb(59, 101, 145);
     border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(83, 91, 113, 0.2);
-    transition: transform 0.3s ease-out;
-    transform: translateX(100%); /* Hidden by default */
+    box-shadow: 0 8px 30px rgb(83, 91, 113, 0.2);
+    transition: all 0.3s ease;
 }
 
-.sidebar-toggle-checkbox {
-    display: none; /* Hide the actual checkbox */
-}
-
-/* Open/Close sidebar buttons */
-.open-sidebar-button {
-    display: none; /* Hidden by default, shown on smaller screens */
-    font-size: 24px;
-    cursor: pointer;
-    color: black;
-    padding: 5px;
-}
-
-.close-sidebar-button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px;
-    cursor: pointer;
-    color: black;
-    margin-bottom: 20px;
-}
-
-.close-sidebar-button i {
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.close-sidebar-button h1 {
-    font-size: 24px;
-    color: rgb(186, 221, 240);
-}
-
-.sidebar-navbar .sidebar-content {
+.navdiv2 {
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
-.sidebar-navbar .sidebar-links {
+.navdiv2 ul {
     list-style: none;
     padding: 0;
-    margin-bottom: auto; /* Push settings section to the bottom */
+    margin: 0;
 }
 
-.sidebar-navbar .sidebar-links li {
+.navdiv2 li {
     margin-bottom: 10px;
 }
 
-.sidebar-navbar .sidebar-links li a {
+.navdiv2 a {
     color: rgb(0, 0, 0);
     font-size: 16px;
     font-weight: bold;
@@ -353,39 +295,33 @@ body.dark-mode #icons a:hover {
     transition: color 0.3s ease;
 }
 
-.sidebar-navbar .sidebar-links li a:hover {
+.navdiv2 a:hover {
     color: rgb(100, 150, 200);
 }
 
-/* Overlay for sidebar */
-#overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
+.logo2 a {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(186, 221, 240);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Adjustments for sidebar buttons */
+.sidebar-button {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Between main content and sidebar */
+    margin-bottom: 10px;
 }
 
-/* Show sidebar when checkbox is checked */
-.sidebar-toggle-checkbox:checked ~ .sidebar-navbar {
-    transform: translateX(0);
-}
-
-.sidebar-toggle-checkbox:checked ~ #overlay {
-    display: block;
-}
-
-/* ===== Settings Section in Sidebar ===== */
+/* ===== Settings Section ===== */
 .settings-section {
+    margin-top: auto; 
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .settings-section label {
-    color: rgb(165, 212, 233);
+    color: rgb(165, 212, 233); 
     font-size: 14px;
     font-weight: bold;
     display: block;
@@ -393,17 +329,17 @@ body.dark-mode #icons a:hover {
 }
 
 .language,
-.mode-toggle, /* Renamed from .darkmode for consistency */
+.mode-toggle,
 .notifications {
     margin-bottom: 15px;
-    padding: 0 5px;
+    padding: 0 5px; 
 }
 
 .language input {
     width: 100%;
     border-radius: 10px;
     padding: 8px;
-    box-shadow: 0 4px 15px rgba(123, 128, 141, 0.1);
+    box-shadow: 0 4px 15px rgb(123, 128, 141, 0.1);
     border: none;
     transition: all 0.3s ease;
     background-color: var(--secondary-color);
@@ -415,28 +351,28 @@ body.dark-mode #icons a:hover {
     background-color: rgb(255, 255, 255);
 }
 
-/* Toggle Switch (for Dark Mode) */
+/* ===== TOGGLE SWITCH (for Dark Mode) ===== */
 .mode-toggle input[type="checkbox"] {
-    display: none;
+    display: none; 
 }
 
 .mode-toggle .toggle-label {
     cursor: pointer;
-    display: block;
-    margin: 0 auto;
-    width: 60px;
-    height: 30px;
+    display: block; 
+    margin: 0 auto; 
+    width: 60px; 
+    height: 30px; 
     border-radius: 15px;
     background-color: var(--primary-color);
-    box-shadow: 0 4px 15px rgba(123, 128, 141, 0.2);
+    box-shadow: 0 4px 15px rgb(123, 128, 141, 0.2);
     position: relative;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .mode-toggle .toggle-ball {
     position: absolute;
-    width: 26px;
-    height: 26px;
+    width: 26px; 
+    height: 26px; 
     top: 2px;
     left: 2px;
     border-radius: 50%;
@@ -445,70 +381,36 @@ body.dark-mode #icons a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.mode-toggle input:checked + .toggle-label .toggle-ball {
-    transform: translateX(30px);
+.mode-toggle input[type="checkbox"]:checked + .toggle-label {
+    background-color: #4CAF50; 
 }
 
-/* ===== Header Section ===== */
-header {
-    padding-top: 80px; /* To clear fixed navbar */
-    text-align: center;
-    padding: 80px 20px 20px; /* Adjusted padding to accommodate fixed navbar */
-    max-width: 1000px;
-    margin: 0 auto;
+.mode-toggle input[type="checkbox"]:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px); 
 }
 
-header h1 {
-    font-size: 3em;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-header form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-header #search-input {
-    padding: 10px 15px;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 300px;
-}
-
-header .select select {
-    padding: 10px 15px;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: white;
-    cursor: pointer;
-}
 
 /* ===== HOME SECTION ===== */
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px); /* Adjust for header/navbar height */
-    padding: 40px 20px;
+    min-height: 100vh;
+    padding: 80px 20px 20px; 
     background-color: rgb(166, 206, 234);
-    gap: 50px;
-    flex-wrap: wrap;
+    gap: 50px; 
+    flex-wrap: wrap; 
+    padding-right: 140px; 
 }
 
 .slider-container {
-    width: 50%;
+    width: 50%; 
     max-width: 600px;
-    height: 400px;
+    height: 400px; 
     overflow: hidden;
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(92, 131, 145, 0.3);
+    box-shadow: 0 8px 30px rgb(92, 131, 145, 0.3);
 }
 
 .slider-container img {
@@ -519,8 +421,8 @@ header .select select {
     top: 0;
     left: 0;
     opacity: 0;
-    transform: translateY(-50px);
-    transition: all 1s ease-in-out;
+    transform: translateY(-50px); 
+    transition: all 1s ease-in-out; 
 }
 
 .slider-container .event {
@@ -539,7 +441,7 @@ header .select select {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-    z-index: 10;
+    z-index: 10; 
 }
 
 .slider-container #right-button {
@@ -555,14 +457,14 @@ header .select select {
 }
 
 .home-content {
-    width: 40%;
+    width: 40%; 
     max-width: 500px;
     text-align: left;
     padding: 20px;
 }
 
 .home-content .main-heading {
-    font-size: 2.5em;
+    font-size: 2.5em; 
     font-weight: bold;
     color: var(--text-color);
     margin-bottom: 20px;
@@ -577,14 +479,15 @@ header .select select {
 
 /*==== end home section==== */
 
-/* ===== Profiles Section (Team Members) ===== */
+/* hero section styling */
 #profiles {
     padding: 50px 20px;
     background-color: rgb(114, 170, 216);
     text-align: center;
+    padding-right: 140px; 
 }
 
-.section-title {
+#profiles h1 {
     font-size: 2.2em;
     color: var(--text-color);
     margin-bottom: 40px;
@@ -598,15 +501,20 @@ header .select select {
 }
 
 .member-card {
-    margin: 20px; /* Adjusted margin for overall layout */
+    margin: 20px; 
     padding: 28px 20px 20px 20px;
-    width: 220px;
+    width: 220px; 
     text-align: center;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--primary-color); 
     border-radius: 20px;
     background: #ffffff;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
 }
 
 .member-photo {
@@ -639,8 +547,8 @@ header .select select {
 }
 
 .social-links a {
-    margin: 0 8px;
-    font-size: 1.2em;
+    margin: 0 8px; 
+    font-size: 1.2em; 
     color: #333;
     transition: color 0.3s;
 }
@@ -649,63 +557,7 @@ header .select select {
     color: var(--primary-color);
 }
 
-/* ===== Projects Section ===== */
-#projects {
-    padding: 50px 20px;
-    background-color: var(--secondary-color);
-    text-align: center;
-}
-
-#projects .section-title {
-    color: var(--text-color);
-    font-family: 'Cairo', Arial, sans-serif;
-    font-weight: 700;
-}
-
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
-    background-color: var(--button-color);
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.project-card {
-    width: 300px;
-    height: 150px;
-    border-radius: 20px;
-    background-color: var(--primary-color);
-    border: 2px solid var(--hover-color);
-    box-shadow: 0 2px 2px 2px gray;
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-}
-
-.project-card:hover {
-    background-color: var(--hover-color);
-    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-    border: 2px solid var(--hover-color);
-    transform: translateY(-5px);
-}
-
-.project-card-title h1 {
-    color: var(--text-color);
-    font-size: x-large;
-    margin-bottom: 10px;
-}
-
-.project-card-description p {
-    color: var(--text-color);
-    font-size: large;
-}
+/* end hero section styling */
 
 /* ===== FOOTER ===== */
 #footer {
@@ -718,6 +570,7 @@ header .select select {
     width: 100%;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    padding-right: 140px; 
 }
 
 #footer a {
@@ -735,7 +588,7 @@ header .select select {
 #footer p {
     color: rgb(0, 0, 0);
     max-width: 800px;
-    margin: 15px auto;
+    margin: 15px auto; 
 }
 
 #icons {
@@ -757,61 +610,135 @@ header .select select {
     transform: scale(1.2);
 }
 
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-    .main-navbar .nav-links {
-        display: none; /* Hide main links on small screens */
-    }
+/* section projects styling */
+section#projects {
+    padding: 50px 20px;
+    background-color: var(--secondary-color); 
+    text-align: center;
+    padding-right: 140px; 
+}
 
-    .main-navbar .open-sidebar-button {
-        display: block; /* Show hamburger icon */
-    }
+section#projects > h1 {
+    color: var(--text-color);
+    font-size: 2.2em; 
+    font-family: 'Cairo', Arial, sans-serif; 
+    font-weight: 700;
+    margin-bottom: 40px;
+}
 
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: var(--button-color); 
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+    width: 300px;
+    min-height: 150px; 
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    border: 2px solid transparent; 
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 30px; 
+    border: 2px solid var(--hover-color);
+    transform: translateY(-5px); 
+}
+
+.project-card-title h1 {
+    color: var(--text-color);
+    font-size: 1.5em; 
+    margin-bottom: 10px;
+}
+
+.project-card-description p {
+    color: var(--text-color);
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
     .home {
         flex-direction: column;
-        padding: 20px;
+        padding-right: 20px; 
     }
-
-    .slider-container,
-    .home-content {
+    .slider-container, .home-content {
         width: 90%;
-        max-width: 100%;
+        max-width: none;
     }
-
-    .team-container,
-    .projects-grid {
-        flex-direction: column;
-        align-items: center;
+    .navbar2 {
+        width: 80px; 
+        top: 60px; 
     }
-
-    .member-card,
-    .project-card {
-        width: 90%;
-        max-width: 300px;
-        margin: 15px auto;
+    .navdiv1 li {
+        margin-right: 15px;
+    }
+    .navbar1 {
+        padding: 8px 15px; 
+    }
+    .logo1 a {
+        font-size: 30px;
+    }
+    #footer, #profiles, section#projects {
+        padding-right: 20px; 
     }
 }
 
-@media (max-width: 480px) {
-    .main-navbar .logo a {
-        font-size: 28px;
-    }
-
-    header form {
+@media (max-width: 768px) {
+    .navbar1 {
         flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
     }
-
-    header #search-input,
-    header .select select {
-        width: 90%;
+    .navdiv1 {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
     }
-
-    .sidebar-navbar {
-        width: 200px;
+    .navdiv1 ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
     }
-
-    .settings-section label {
-        font-size: 12px;
+    .navdiv1 li {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .navdiv1 li a, .nav-button {
+        width: 100%;
+        text-align: left;
+        padding: 8px 0;
+    }
+    .navbar2 {
+        display: none; 
+    }
+    .home, #profiles, section#projects, #footer {
+        padding-right: 20px; 
+        padding-left: 20px;
+    }
+    .home-content .main-heading {
+        font-size: 2em;
+    }
+    .project-card {
+        width: 90%; 
     }
 }
 /* nm, */
