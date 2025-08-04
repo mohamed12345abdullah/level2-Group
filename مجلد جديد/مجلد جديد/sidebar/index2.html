@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 'Poppins', sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+           
+        }
+
+        html {
+          
+            display: flex;
+            height: 100%;
+            place-items: center;
+            text-align: center;
+            background-color: black;
+
+
+        }
+
+        .container {
+            width: 400px;
+            background-color: #111;
+            padding: 20px 30px;
+            border: 1px solid #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+          
+
+
+
+
+        }
+
+        .container .star-wedget input {
+            display: none;
+
+        }
+
+        .star-wedget label {
+            font-size: 40px;
+            color: #444;
+            padding: 10px;
+            transition: all 0.3s ease;
+
+        }
+
+        .star-widget ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .star-widget ul li i {
+            color: #444;
+        }
+
+        .star-widget ul li i:hover {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:hover~i {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked~i {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked~i:hover {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked~i:hover~i {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked~i:hover~i:hover {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked~i:hover~i:hover~i {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked~i:hover~i:hover~i:hover {
+            color: #ffd700;
+        }
+
+        .star-widget ul li i:checked~i:hover~i:hover~i:hover~i {
+            color: #ffd700;
+        }
+
+
+        form header {
+            width: 100%;
+            font-size: 25px;
+            color: #e2c147;
+            margin: 5px 0 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        form .textarea {
+            height: 50px;
+            width: 100%;
+            overflow: hidden;
+
+
+        }
+
+        form .textarea textarea {
+            height: 100%;
+            width: 100%;
+            border: none;
+            outline: 1px solid #333;
+            color: #a54040;
+            outline: none;
+            font-size: 17px;
+            padding: 10px;
+
+
+
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .btn button{
+            width: 50%;
+            height: 40px;
+
+            border-radius: 15px;
+            padding: 10px 20px;
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+          
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+
+        }   
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="star-widget">
+
+
+            <ul>
+                <li> <i id="rate-1" class="fa-solid fa-star"></i></li>
+                <li> <i id="rate-2" class="fa-solid fa-star"></i></li>
+                <li> <i id="rate-3" class="fa-solid fa-star"></i></li>
+                <li> <i id="rate-4" class="fa-solid fa-star"></i></li>
+                <li> <i id="rate-5" class="fa-solid fa-star"></i></li>
+            </ul>
+            <form action="">
+                <header>I don't like it</header>
+                <div class="textarea    ">
+                    <textarea cols="30"></textarea>
+                </div>
+                <div class="btn">
+                    <button type="submit">post</button>
+
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+    <script>
+        const starWidget = document.querySelector('.star-widget');
+        const form = document.querySelector('form');
+        const textarea = document.querySelector('textarea');
+        const btn = document.querySelector('.btn');
+        const header = document.querySelector('header');
+        console.log(header);
+        const stars = document.querySelectorAll('i');
+
+        stars.forEach(star => {
+            star.addEventListener('click', (e) => {
+                stars.forEach(star => {
+                    star.style.color = '#444';
+                });
+                for (let i = 0; i <= 5; i++) {
+                    if (`rate-${i + 1}` <= e.target.id) {
+                        stars[i].style.color = '#ffd700';
+                    }
+                }
+                if (e.target.id == 'rate-5') {
+                    header.textContent = 'I like it';
+                    form.style.display = 'block';
+                }
+                if (e.target.id == 'rate-4') {
+                    header.textContent = '  I WOULD LIKE IT';
+                    form.style.display = 'block';
+                }
+                if (e.target.id == 'rate-3') {
+                    header.textContent = 'I will visit it';
+                    form.style.display = 'block';
+                }
+                if (e.target.id == 'rate-2') {
+                    header.textContent = 'I will not visit it';
+                    form.style.display = 'block';
+                }
+                if (e.target.id == 'rate-1') {
+                    header.textContent = 'I dont like it';
+                    form.style.display = 'block';
+                }
+
+
+
+            });
+        });
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="buy">
+        <div>
+            <label for="username">username<i class="fa-solid fa-user"></i></label>
+            <input id="username" type="text" placeholder=" username">
+        </div>
+        <div class="password-container">
+            <label for="password">password<i class="fa-solid fa-lock"></i></label>
+            <div class="input-with-icon">
+                <input id="password" type="password" placeholder=" password">
+                <i class="fa-solid fa-eye password-toggle"></i>
+            </div>
+        </div>
+      
+
+        <div>
+            <label for="email">email<i class="fa-solid fa-envelope"></i></label>
+            <input id="email" type="text" placeholder=" email">
+        </div>
+        <div>
+            <label for="phone">phone<i class="fa-solid fa-phone"></i></label>
+            <input id="phone" type="text" placeholder=" phone">
+        </div>
+        <div>
+            <label for="visa">visa<i class="fa-solid fa-cart-shopping"></i></label>
+            <input id="visa" type="text" placeholder=" visa/ mastercard">
+        </div>
+        <div>
+            <label for="cardnumber">card number<i class="fa-solid fa-credit-card"></i></label>
+            <input id="cardnumber" type="text" placeholder=" card number">
+        </div>
+        <div>
+            <label for="expirydate">expiry date<i class="fa-solid fa-calendar"></i></label>
+            <input id="expirydate" type="date" placeholder=" expiry date">
+        </div>
+      
+        <div>
+            <label for="category">category<i class="fa-solid fa-list"></i></label>
+            <select id="category" name="category">
+                <option value="all">All</option>
+                <option value="cloths">Cloths</option>
+                <option value="shoes">Shoes</option>
+                <option value="jewelry">Jewelry</option>
+                <option value="watches">Watches</option>
+                <option value="bags">Bags</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </div>
+        
+        <button type="submit">Submit Order</button>
+    </form>
+    
+    <script>
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.querySelector('.password-toggle');
+        
+        eyeIcon.addEventListener('click', function() {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.add('fa-eye-slash');
+                eyeIcon.classList.remove('fa-eye');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        });
+
+        
+      
+    </script>
+</body>
+</html>
