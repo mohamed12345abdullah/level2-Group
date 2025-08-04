@@ -7,85 +7,90 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Add Product</h1>
-    <form action="" id="form">
-       
 
-        
-        <label for="name">Name</label>
-        <input type="text" name="name" placeholder="Enter name">
-      
-        <label for="price">Price</label>
-        <input type="text" name="price" placeholder="Enter price">
 
-        <label for="description">Description</label>
-        <input type="text" name="description" placeholder="Enter description">
-        <label for="image">Image</label>
-        <input type="text" name="image" placeholder="Enter image">
-        <input id="submit" type="submit" value="Submit">
-        <button id="create"> create</button>
-        <input id="search" type="search" name="search" placeholder="Search">
-        <input id="tittle" type="search"   placeholder="Search By tittle">
-        <input  id="category" type="search"  placeholder="Search By category">
-        <input id="del" type="text" placeholder="delet">
-        <div id="list">
-            <!-- <div>
-                <h4>ID</h4>
-                <h4>TITTLE</h4>
-                <h4>PRICE</h4>
-                <h4>DESCRAPTION</h4>
-                <h4>IMAGE</h4>
+    <section id="formContainer">
+            <h1>Add Product</h1>
+            <form action="" id="puloadForm">
+               <div class="input-box">
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Enter name">
+              </div>
+
+                <div class="input-box">
+
+  
+                <label for="price">Price</label>
+                <input type="text" name="price" placeholder="Enter price">
+              </div>
+
+              <div class="input-box">
+                <label for="description">Description</label>
+                <input type="text" name="description" placeholder="Enter description">
+              </div>
+
+              <div class="input-box">
+                <label for="image">Image</label>
+                <input type="text" name="image" placeholder="Enter image">
+              </div>
+
+ 
+            <div class="input-box" >
+                <input id="search" type="search" name="search" placeholder="Search">
                 
-               
-             
-               
+
+              </div>      
               
-            </div> -->
-            <div id="row">
+              <div class="input-box" id="create-box">
+                <input id="submit" type="submit" value="create">
+              </div>
+            
+                
+              <div  id="message">
+
+              </div>
+                
+            </form>
+
+    </section>
+
+
+    <div id="list">
+        <!-- <div>
+            <h4>ID</h4>
+            <h4>TITTLE</h4>
+            <h4>PRICE</h4>
+            <h4>DESCRAPTION</h4>
+            <h4>IMAGE</h4>
+            
            
-                <p>id</p>
-                <p>tittle</p>
-                <p>price</p>
-                <p>description</p>
-                <p>image</p> 
-                <p>category</p>
-                <p>apdate</p>
-                <p>delete</p>
          
-            </div>
-            <div id="row">
-            
-                <p>1</p>
-                <p>product 1</p>
-                <p> 100 </p>
-                <p>description 1</p>
-                <p>image 1</p> 
-                <p>category 1</p>
-                <p>apdate 1</p>
-                <p>delete 1</p>
-         
-            </div>
-            
-
-
+           
+          
+        </div> -->
+        <div id="row">
+       
+            <p>id</p>
+            <p>tittle</p>
+            <p>price</p>
+            <p>description</p>
+            <p>image</p> 
+            <p>category</p>
+            <p>apdate</p>
+            <p>delete</p>
+     
         </div>
 
         
-        
-        
-    </form>
-  
 
+
+    </div>
+
+    
     <div id="container">
         <h1>Products</h1>
  
-            <div  class="product">
-                <img src="" alt="">
-                <h2 class="name"></h2>
-                <p class="price"></p>
-                <p class="description"></p>
-                <button class="buy">Buy</button>
-            </div>
+
             
             
         
