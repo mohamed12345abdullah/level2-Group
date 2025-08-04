@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            background-color: transparent;
+            position: fixed;
+            width: 98vw;
+            z-index: 1000;
+        }
+
+        #navbar {
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            place-items: center;
+            padding: 15px;
+
+        }
+
+        #navbar-links {
+            display: flex;
+            flex-direction: row;
+            place-items: center;
+        }
+
+        #navbar-links>ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #navbar-links>ul>li {
+            margin-left: 60px;
+        }
+
+        #navbar-links>ul>li>a {
+            text-decoration: none;
+            color: rgb(75, 142, 180);
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+        }
+
+        #navbar-links>ul>li>a:hover {
+            color: rgb(129, 194, 238);
+        }
+
+        .blue-button {
+            background-color: rgb(97, 145, 216);
+            color: white;
+            border: none;
+
+            font-size: 20px;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            transition: 0.3s ease-in-out;
+
+        }
+
+        .blue-button:hover {
+            background-color: rgb(93, 178, 235)
+        }
+
+        #navbar-links>button {
+            margin-left: 60px;
+            padding: 8px 15px;
+            border-radius: 10px;
+        }
+
+        /*  END OF NAVIGATION BAR */
+
+
+
+        #home-top-containor {
+            background-color: white;
+            height: 80vh;
+            padding: 20px;
+            padding-top: 150px;
+            padding-bottom: 70px;
+            display: flex;
+            justify-content: center;
+            width: 98vw;
+            box-sizing: border-box;
+
+        }
+
+        #home-top-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 85%;
+
+        }
+
+
+
+
+        #home-top-text {
+            width: 50%;
+            box-sizing: border-box;
+
+
+        }
+
+        #home-top-text>h1 {
+            color: rgb(97, 145, 216);
+            font-size: 50px;
+            font-weight: 600;
+            text-align: baseline;
+
+            line-height: 99px;
+
+        }
+
+        #home-top-text>button {
+            margin-top: 30px;
+            padding: 17px;
+            border-radius: 30px;
+            border: none;
+            background-color: rgb(75, 142, 180);
+            font-size: 17px;
+
+        }
+
+        #home-top-text>button>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #home-image {
+            max-width: 50%;
+
+        }
+
+        #home-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            position: relative;
+
+        }
+
+        #collection-containor {
+            background-color: rgb(129, 175, 201);
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            padding: 18px;
+
+        }
+
+        #collection-containor>h1 {
+            color: white;
+            font-size: 50px;
+            font-weight: 500;
+            margin-top: 40px;
+            z-index: 10;
+
+        }
+
+        #collection-items-wrapper {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 80%;
+            padding: 50px;
+            /* background-color: aqua; */
+        }
+
+
+
+        .collection-item {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            align-items: center;
+        }
+
+        .collection-icons {
+            background-color: white;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.3);
+            color: black;
+            display: flex;
+            place-items: center;
+            justify-content: center;
+            transition: 0.4s ease-in-out;
+        }
+
+        .collection-name {
+            font-size: 99%;
+        }
+
+        .product-item-wrapper {
+            width: 90px;
+            padding: 100px;
+
+        }
+
+        .product-image>img {
+            width: 200%;
+            height: 200%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="navbar">
+
+            <div id="navbar-logo">
+                <h2><i class="fa-solid fa-gem"></i>Comfi<span>.</span></h2>
+            </div>
+            <div id="navbar-links">
+                <ul>
+
+                    <li>
+                        <a href="../ayten/index3.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Products</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+
+
+                </ul>
+                <button class="blue-button">
+                    Shop now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div id="home-top-containor">
+        <div id="home-top-wrapper">
+            <div id="home-top-text">
+
+                <h1>
+                    Track Ur Steps W' A Comfi Clothes
+                </h1>
+
+                <button class="blue-button2"><a href="collection-containor"> See Collection</a> </button>
+
+
+
+
+            </div>
+
+            <div id="home-image">
+                <img src="c:\Users\Electronica Care\Pictures\Letter Graphic Raglan Sleeve Zip Up Drawstring Hoodie.png"
+                    alt="">
+            </div>
+
+        </div>
+    </div>
+
+    <div id="collection-containor">
+        <h1>Our Collection</h1>
+        <div id="collection-items-wrapper">
+
+
+            <div class="collection-item">
+                <div class="collection-icons">
+
+
+                </div>
+                <div class="collection-name">
+                    Hoddies
+                </div>
+
+            </div>
+
+            <div class="collection-item">
+                <div class="collection-icons">
+
+
+                </div>
+                <div class="collection-name">
+                    Skirts
+                </div>
+
+            </div>
+
+            <div class="collection-item">
+                <div class="collection-icons">
+
+
+                </div>
+                <div class="collection-name">
+                    Blouses
+                </div>
+
+            </div>
+
+            <div class="collection-item">
+                <div class="collection-icons">
+
+
+                </div>
+                <div class="collection-name">
+                    Jersy t-shirt
+                </div>
+
+            </div>
+
+            <div class="collection-item">
+                <div class="collection-icons">
+
+
+                </div>
+                <div class="collection-name">
+                    Jeans pants
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="products">
+
+    </div>
+
+
+
+
+    <script>
+        function fetchData() {
+            console.log("any rhing");
+            
+            fetch("https://asyut-eng-synd.vercel.app/api/products")
+                .then(response => {
+                    console.log("response");
+                    return response.json()
+                    
+                    
+                })
+                .then(res => {
+                    console.log(res);
+                    
+                    let products = res.data;
+                    let container = document.querySelector(".products")
+                    for (let i = 0; i < products.length; i++) {
+                        container.innerHTML += `
+                            <div class="product">
+                                <div class="image">
+                                 <img src="${products[i].image}" alt="">
+                                </div>
+                                <p class="title"> ${products[i].name}</p>
+                                <p class="price">${products[i].price}</p>
+                                <p class="description"> ${products[i].description}</p>
+                                <button> Add to cart</button>
+                            </div>`
+                    }
+                })
+        }
+        fetchData()
+    </script>
+
+</body>
+
+</html>
