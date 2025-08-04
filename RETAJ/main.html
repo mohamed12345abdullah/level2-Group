@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+nav{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(34, 101, 79);
+  height: 100px;
+  box-shadow: 0px 0px 40px rgba(32, 30, 30, 0.5);
+  position: fixed;
+  width: 100%;
+
+}
+
+div{
+background-color: rgb(186, 239, 221);
+margin-right: 80px ;
+margin-left: 80px;
+height: 80px;
+width: 100px;
+justify-content: center;
+align-items: center;
+display: flex;
+}
+#box4{
+    background-color: rgb(255, 255, 255);
+}
+#box4 a{
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+  <nav>
+    <div id="box1"><a href="">clothes</a></div>
+    <div id="box2"><a href="">jewelry</a></div>
+    <div id="box3"><a href="">shoes</a></div>
+    <div id="box4"><a href="">home</a></div>
+      
+      <div id="the-main"></div>
+  </nav>  
+  
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+nav{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(34, 101, 79);
+  height: 100px;
+  box-shadow: 0px 0px 40px rgba(32, 30, 30, 0.5);
+  position: fixed;
+  width: 100%;
+
+}
+
+div{
+background-color: rgb(186, 239, 221);
+margin-right: 80px ;
+margin-left: 80px;
+height: 80px;
+width: 100px;
+justify-content: center;
+align-items: center;
+display: flex;
+}
+
+
+    </style>
+</head>
+<body>
+  <nav>
+    <div id="box1"><a href="">clothes</a></div>
+    <div id="box2"><a href="">jewelry</a></div>
+    <div id="box3"><a href="">shoes</a></div>
+      
+      
+  </nav>  
+  <script>
+    async function getData(){
+        var result=await fetch("file:///C:/Users/Ahmed/Desktop/rn/form.html")
+     var response=await result.json()
+     console.log(response);
+     var products=response.getData()
+     console.log(products);
+     for(let i=0;i<products.length;i++){
+        document.getElementById("the-main").innerHTML+=`
+        <div>
+            <img src="${products[i].image}" alt="">
+            <h2>${products[i].name}</h2>
+            <p>${products[i].price}</p>
+            <p>${products[i].description}</p>
+            <button>Buy</button>
+        </div>
+        `
+            
+        }
+        }
+        
+    
+  </script>
+</body>
+
+</html>

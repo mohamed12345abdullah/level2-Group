@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+form{
+    flex-direction: column;
+    gap: 10px;
+
+   
+   width: 200px;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 60px 50px 50px 50px;
+}
+input{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(232, 217, 196);
+}
+#container{
+    width: 300px;
+    height: 400px;
+    background-color: rgb(235, 221, 152);
+    box-shadow: 0px 0px 40px rgba(32, 30, 30, 0.5);
+    border-radius: 10px;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+    <form id="form" action="">
+
+        <input type="text" name="name" placeholder="enter the name">
+        <input type="text" name="price" placeholder="enter the price">
+        <input type="text" name="description" placeholder="enter the description">
+        <input type="text" name="image" placeholder="enter the image"> <br>
+        <input type="submit" name="submit">
+
+
+
+    </form>
+</div>
+    <script>
+        theform = document.querySelector("#form")
+        theform.addEventListener("submit", async function (e) {
+            e.preventDefault()
+            var name = document.querySelector("input[name = 'name']").value;
+            var price = document.querySelector("input[name = 'price']").value;
+            var description = document.querySelector("input[name = 'description']").value;
+            var image = document.querySelector("input[name = 'image']").value;
+
+
+
+
+            var data = {
+                name, price, description, image
+            }
+            stringdata = JSON.stringify(data)
+
+            var res = await fetch("file:///C:/Users/Ahmed/Desktop/rn/main.html", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: stringdata
+            })
+
+            var resdata = await res.json()
+            console.log(resdata);
+
+        })
+
+
+    </script>
+</body>
+
+</html>

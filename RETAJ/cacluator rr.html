@@ -1,88 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-.nah{
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            
+        }
+        .nah {
 
-margin-bottom: 10px;
-justify-content: center;
+            /* margin-bottom: 10px; */
+            /* justify-content: center; */
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        /* display: flex;
+            justify-content: center; 
+             align-items: center; 
+            flex-direction: row; */
+        }
+
+        .container {
+            /* display: flex; */
+            /* flex-direction: row; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* margin: auto; */
+            width: 13%;
+            height: 220px;
+            background-color: rgb(179, 166, 216);
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 5px;
 
 
-}
+        }
+        .screen{
+            width: 88%;
+            height: 35px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
 
-.container{
-      width: 100px;
-      background-color: aquamarine;
-     
-     
-    
-}
-#the div{
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-
-}
-
-
- 
-
-
+  
     </style>
 </head>
-<body >
-    <div id="the div">
-    <div class="container">
-<div class="screen" ></div>
-<div   class="button"></div>
-<button class="nah" onclick="clickButton(1)">1</button>
-<button  class="nah" onclick="clickButton(2)">2</button>
-<button  class="nah"onclick="clickButton(3)">3</button>
-<button  class="nah"onclick="clickButton(4)">4</button>
-<button class="nah" onclick="clickButton(5)">5</button>
-<button  class="nah" onclick="clickButton(6)">6</button>
-<button  class="nah" onclick="clickButton(7)">7</button>
-<button  class="nah" onclick="clickButton(8)">8</button>
-<button  class="nah" onclick="clickButton(9)">9</button>
-<button  class="nah" onclick="clickButton('+')">+</button>
-<button  class="nah" onclick="clickButton('-')">-</button>
-<button  class="nah" onclick="clickButton('*')">*</button>
-<button  class="nah" onclick="del('c')">c</button>
-<button  class="nah" onclick="equal()('=')">=</button>
+
+<body>
+
+        <div class="container">
+            <div class="screen"></div>
+            <div class="button">
+            <button class="nah" onclick="clickButton(1)">1</button>
+            <button class="nah" onclick="clickButton(2)">2</button>
+            <button class="nah" onclick="clickButton(3)">3</button>
+            <button class="nah" onclick="clickButton(4)">4</button>
+            <button class="nah" onclick="clickButton(5)">5</button>
+            <button class="nah" onclick="clickButton(6)">6</button>
+            <button class="nah" onclick="clickButton(7)">7</button>
+            <button class="nah" onclick="clickButton(8)">8</button>
+            <button class="nah" onclick="clickButton(9)">9</button>
+            <button class="nah" onclick="clickButton('+')">+</button>
+            <button class="nah" onclick="clickButton('-')">-</button>
+            <button class="nah" onclick="clickButton('*')">*</button>
+            <button class="nah" onclick="del('c')">c</button>
+            <button class="nah" onclick="equal()('=')">=</button>
+            </div>
 
 
 
-    </div>
-    </div>
+        </div>
+ 
 
     <script>
-var screen=document.querySelector(".screen")
-function clickButton(num){
+        var screen = document.querySelector(".screen")
+        function clickButton(num) {
 
-console.log(num);
-screen.innerHTML+=num
+            console.log(num);
+            screen.innerHTML += num
 
-}
-function equal(){
-var s="";
-s=screen.innerHTML;
-console.log(s);
+        }
+        function equal() {
+            var s = "";
+            s = screen.innerHTML;
+            console.log(s);
 
-screen.innerHTML= eval(s);
+            screen.innerHTML = eval(s);
 
-}
-function del(){
-console.log(del);
-screen.innerHTML="";
+        }
+        function del() {
+            console.log(del);
+            screen.innerHTML = "";
 
 
-}
+        }
 
     </script>
-    
+
 </body>
+
 </html>
