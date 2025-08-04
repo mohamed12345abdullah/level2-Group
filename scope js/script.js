@@ -91,29 +91,6 @@ function cleanForm(){
 }
 // form js
 fetchData();
-
-
-function addAndUpdateProduct(product,id){
-    fetch(`https://asyut-eng-synd.vercel.app/api/products/${id}`, {
-        method: id?'PUT':'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(product)
-
-    }).then(function(response){
-        
-        let res= response.json();
-        console.log(res);
-        fetchData();
-        return res
-    }).then(function(data){
-        let messageDiv = document.getElementById('message');
-        messageDiv.innerHTML = data.message;
-        console.log(data);
-        cleanForm();
-    })
-}
 let form = document.getElementById('puloadForm');
 console.log(form);
 form.addEventListener('submit', function(e){
@@ -130,7 +107,25 @@ form.addEventListener('submit', function(e){
         image: image
     }
     let stringData = JSON.stringify(product);
-    addAndUpdateProduct(product,id);
+    fetch('https://asyut-eng-synd.vercel.app/api/products', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: stringData
+
+    }).then(function(response){
+        
+        let res= response.json();
+        console.log(res);
+        fetchData();
+        return res
+    }).then(function(data){
+        let messageDiv = document.getElementById('message');
+        messageDiv.innerHTML = data.message;
+        console.log(data);
+        cleanForm();
+    })
 
    
     console.log(name, price, description, image);
