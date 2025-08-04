@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    .container {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        background-color: rgb(147, 172, 188);
+        border-radius: 20px;
+        box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #c7eaf6;
+        transition: all 0.3s;
+
+
+    }
+
+    .container:hover {
+        transform: scale(1.05);
+        width: 300px;
+        height: 300px;
+        background-color: #adcbd6;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        box-shadow: 0 8px 30px rgb(125, 136, 146);
+    }
+
+    h1 {
+        color: rgb(180, 224, 244);
+    }
+
+
+    .form-group {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: rgb(180, 224, 244);
+    }
+
+    input {
+
+
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: rgb(180, 224, 244);
+
+    }
+
+    button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(180, 224, 244);
+        color: white;
+        border: white;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+
+        background-color: rgb(163, 202, 220);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transform: scale(1.05);
+    }
+</style>
+
+
+<body>
+    <div class="container">
+
+        <h1>Sign In</h1>
+        <form id="singinForm">
+
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+
+
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password">
+
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        var form = document.querySelector("#singinForm");
+        form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+            
+            var email = document.querySelector("#email").value;
+            var password = document.querySelector("#password").value;
+            var resultDiv = document.getElementById('result');
+            
+            // Validate input fields
+            if (!email || !password) {
+                resultDiv.innerHTML = "<p style='color: red;'>Please fill in all fields</p>";
+                return;
+            }
+            
+            try {
+                var data = {
+                    'email': email,
+                    'password': password,
+                };
+                
+                console.log('Sending login request:', data);
+                resultDiv.innerHTML = "<p style='color: blue;'>Signing in...</p>";
+                
+                var response = await fetch("https://asyut-eng-synd.vercel.app/api/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                var result = await response.json();
+                console.log('Server response:', result);
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = "<p style='color: green;'>" + (result.message || "Login successful!") + "</p>";
+                    alert("Login successful!");
+                    // You can redirect or perform other actions here
+                } else {
+                    resultDiv.innerHTML = "<p style='color: red;'>" + (result.message || "Login failed. Please check your credentials.") + "</p>";
+                }
+                
+            } catch (error) {
+                console.error('Login error:', error);
+                resultDiv.innerHTML = "<p style='color: red;'>Network error. Please try again later.</p>";
+            }
+        });
+
+        // // token
+        // localStorage.setItem("token", result.token);
+        // localStorage.setItem("user", JSON.stringify(result.user));
+        // localStorage.href="./profile.html/"
+
+
+    </script>
+
+
+</body>
+
+</html>
