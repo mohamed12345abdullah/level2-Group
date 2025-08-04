@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .slider-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .event {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        #right-button, #left-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #right-button {
+            right: 0;
+        }
+        #left-button {
+            left: 0;
+        } */
+        .slider-container {
+    width: 60%; 
+    height: 600px; 
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgb(92, 131, 145, 0.3);
+}
+
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-50px); 
+    transition: all 1s ease-in-out; 
+}
+
+.slider-container .event {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10; 
+}
+
+.slider-container #right-button {
+    right: 10px;
+}
+
+.slider-container #left-button {
+    left: 10px;
+}
+
+.slider-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container" id="image-slider">
+        <img class="event" src="./img2/download.png" alt="">
+        <img src="./img2/download (1).png" alt="">
+        <img src="./img2/download (1).jpg" alt="">
+        <img src="./img2/download (2).jpg" alt="">
+        <img src="./img2/download.jpg" alt="">
+    
+        <button onclick="nextImage()" id="right-button" aria-label="Next image">next</button>
+        <button onclick="prevImage()" id="left-button" aria-label="Previous image">prev</button>
+    </div>
+    <script>
+        // let currentIndex = 0;
+        // const images = document.querySelectorAll('.event');
+        // const totalImages = images.length;
+        // function nextImage() {
+        //     images[currentIndex].classList.remove('event');
+        //     currentIndex = (currentIndex + 1) % totalImages;
+        //     images[currentIndex].classList.add('event');
+        // }
+
+        // function prevImage() {
+        //     images[currentIndex].classList.remove('event');
+        //     currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        //     images[currentIndex].classList.add('event');
+        // }
+        // Image Slider Logic
+var index = 0;
+var sliderContainer = document.getElementById("image-slider"); 
+var images = sliderContainer.querySelectorAll("img"); 
+
+function nextImage(){
+    images[index].classList.remove("event");
+    index++;
+    if(index >= images.length){
+        index = 0; 
+    }
+    images[index].classList.add("event");
+}
+function prevImage(){
+    images[index].classList.remove("event");
+    index--;
+    if(index < 0){
+        index = images.length - 1;
+    }
+    images[index].classList.add("event");
+}
+
+// Optional: Auto-play slider (uncomment to activate)
+// setInterval(function() {
+//     nextImage();
+// }, 3000); // Change image every 3 seconds
+
+// Dark Mode Toggle Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const themeSwitch = document.getElementById('theme-switch');
+    const body = document.body;
+
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeSwitch.checked = true;
+    }
+
+    themeSwitch.addEventListener('change', function() {
+        if (this.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});
+// // Get the bookmark element
+// const bookmark = document.getElementById("#bookmark");
+
+// // Add click event listener to toggle navigation
+// if (bookmark) {
+//     bookmark.addEventListener("click", () => {
+//         // Toggle bookmark active state
+//         bookmark.classList.toggle("active");
+        
+//         // Toggle navbar2 (sidebar)
+//         const navbar2 = document.querySelector(".navbar2");
+//         if (navbar2) {
+//             navbar2.classList.toggle("active");
+//         }
+        
+//         // Toggle navbar1 (main navbar)
+//         const navbar1 = document.querySelector(".navbar1");
+//         if (navbar1) {
+//             navbar1.classList.toggle("active");
+//         }
+//     });
+// }
+
+    </script>
+</body>
+</html>
