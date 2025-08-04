@@ -76,7 +76,7 @@ body {
 
 }
 
-.product {
+/* .product {
    display: flex;
    flex-direction: column;
    justify-content: space-around;
@@ -101,7 +101,7 @@ body {
    background-color: #677c8e;
    scale: 1.1;
 
-}
+} */
 
 img {
    width: 200px;
