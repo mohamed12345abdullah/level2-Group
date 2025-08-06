@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form {
+            width: 900px;
+            height: 380px;
+            border: 2px solid rgba(0, 0, 0, 0.11);
+            border-radius: 20px;
+            background-color: #ddd9f3;
+            display: flex;
+            margin: auto;
+            display: flex;
+        }
+
+
+
+        form>input {
+            display: flex;
+            flex-direction: row;
+            width: 700px;
+            height: 30px;
+            margin-left: 10px;
+            margin-top: 10px;
+            padding-left: 9px;
+            border: none;
+            border-radius: 7px;
+            background-color: #aeade2;
+            cursor: pointer;
+
+        }
+
+        #products-form {
+            text-align: end;
+            display: flex;
+          box-sizing: border-box;
+            width: 880px;
+          height: 300px;
+          margin-left: 10px;
+          background-color: rgb(195, 206, 226);
+         border-radius: 15px;
+        
+        }
+
+      #titles{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: #c7c3e4;
+        width: 900px;
+        height: 40px;
+        margin-top: 0;
+       
+        border-radius: 7px 7px 0px 0px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.171);
+       }
+       img{
+        width: 40%;
+        height: 40%;
+        object-fit: contain;
+       }
+
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <form>
+            <input id="serch" type="text" placeholder="Search products"><br>
+
+            <div id="products-form">
+<div id="titles">
+                <p>ID</p>
+                <p> NAME</p>
+                <p>PRICE</p>
+                <p>DESCRIPTION</p>
+                <p>CATEGORY</p>
+                <p>IMAGE</p>
+
+                <p>ACTIONS</p>
+                 
+
+</div>
+                
+            </div>
+
+    </div>
+    </form>
+    <script>
+
+
+var container = document.getElementById('container');
+console.log(container);
+async function fetchData() {
+    var result = await fetch('https://asyut-eng-synd.vercel.app/api/products')
+    var response = await result.json();
+    console.log(result);
+    console.log(response);
+    let products = response.data;
+    console.log(products);
+   
+    let html = '';
+    products.forEach(product => {
+        html += `
+
+        <div id="product">
+                <img src="${product.image}" alt="">
+                <h2>${product.name}</h2>
+                <p>${product.price}</p>
+                <p>${product.description}</p>
+                <p>${product.category}</p>
+                <button onclick="deleteProduct(${product.id})">delete</button>
+                <button onclick="updateProduct(${product.id})">update</button>
+                <button>Buy</button>
+            </div>
+        
+        `;
+    });
+    container.innerHTML =     `<div id="form">
+        <form>
+            <input id="serch" type="text" placeholder="Search products"><br>
+
+            <div id="products-form">
+<div id="titles">
+                <p>ID</p>
+                <p> NAME</p>
+                <p>PRICE</p>
+                <p>DESCRIPTION</p>
+                <p>CATEGORY</p>
+                <p>IMAGE</p>
+
+                <p>ACTIONS</p>
+                 
+
+</div>
+                
+            </div>
+
+    </div>
+    </form>`; 
+    if (result.ok) {
+        console.log('success');
+    }
+    else {
+        console.log('error');
+    }
+
+    console.log(response);
+
+}
+// form js
+fetchData();
+
+    </script>
+</body>
+
+</html>
