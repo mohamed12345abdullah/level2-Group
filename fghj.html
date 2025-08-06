@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDoList</title>
+    <title>قائمة المهام</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:gray;
+            background-color: #013e99;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
             padding: 20px;
-            color: #f0e2e2;
         }
         .container {
-            background-color: rgba(75, 74, 74, 0.678);
+            background-color: #00388b;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 30px rgb(28, 0, 153);
             width: 100%;
             max-width: 500px;
         }
         .container:hover{
-            background-color:rgba(75, 74, 74, 0.473);
+            background-color: #0024c5;
             transition: all 0.3s ease-in-out;
             transform: translateY(-5px);
         }
         h1 {
             text-align: center;
-            color: #f0e2e2;
+            color: #333;
             margin-bottom: 25px;
         }
         .add-task-section {
@@ -38,14 +37,20 @@
             flex-direction: column; /* لجعل العناصر تحت بعضها */
             gap: 12px; /* مسافة أكبر بين حقول الإدخال */
             margin-bottom: 20px;
-            border: 1px solid #e0e0e0;
+            border: none;
             padding: 20px;
             border-radius: 8px;
-            background-color: #75757560;
+            background-color: #1c2255;
+            box-shadow: 0 5px 30px rgb(22, 0, 117);
+        }
+        .add-task-section:hover{
+            background-color: #020749;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-5px);
         }
         .add-task-section label {
             font-size: 0.9em;
-            color: #f3f3f3;
+            color: #555;
             margin-bottom: 3px;
             display: block;
         }
@@ -65,8 +70,8 @@
             min-height: 80px;
         }
         .add-task-section button {
-            background-color: #fffbfb;
-            color: rgb(36, 35, 35);
+            background-color: #504eec;
+            color: white;
             padding: 12px 20px;
             border: none;
             border-radius: 6px;
@@ -77,7 +82,7 @@
             transition: background-color 0.3s ease;
         }
         .add-task-section button:hover {
-            background-color: #b9b9b9;
+            background-color: #0c0050;
         }
         .task-list {
             list-style: none;
@@ -99,7 +104,7 @@
         .task-item.completed {
             background-color: #e6ffe6;
             text-decoration: line-through;
-            color: #000000;
+            color: #777;
         }
         .task-item .task-details {
             width: 100%;
@@ -108,19 +113,19 @@
         .task-item .task-title {
             font-weight: bold;
             font-size: 1.15em;
-            color: #0c0c0c;
+            color: #333;
             margin-bottom: 5px;
             display: block;
         }
         .task-item .task-description {
             font-size: 0.9em;
-            color: #000000;
+            color: #666;
             margin-bottom: 5px;
             display: block;
         }
         .task-item .task-meta {
             font-size: 0.85em;
-            color: #000000;
+            color: #888;
             display: flex;
             justify-content: space-between;
             width: 100%;
@@ -136,7 +141,7 @@
             margin-top: 10px;
         }
         .task-item button {
-            background-color: #1a1919;
+            background-color: #dc3545;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -147,56 +152,52 @@
             transition: opacity 0.3s ease;
         }
         .task-item button.complete-btn {
-            background-color: #101111;
+            background-color: #509cff;
         }
         .task-item button:hover {
             opacity: 0.9;
         }
         .no-tasks-message {
             text-align: center;
-            color: #0c0c0c;
+            color: #888;
             margin-top: 20px;
             font-style: italic;
-            background-color: #3f3f3f;
         }
         .summary {
             text-align: center;
             margin-top: 20px;
             padding: 10px;
-            background-color: #3f3f3f;
+            background-color: #e9ecef;
             border-radius: 5px;
-            color: #5e5e5e;
+            color: #333;
             font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 10px 5px rgb(73, 116, 255);
         }
-        #result{
-            text-align: center;
-            color: #f0e2e2;
-            margin-top: 20px;
-            font-style: italic;
-            background-color: #3f3f3f;
-            padding: 10px;
-            border-radius: 5px;
+        .summary:hover{
+            background-color: #3c3880;
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-5px);
         }
-
     </style>
 </head>
 <body>
     <div class="container">
         <h1>قائمة المهام</h1>
-        <p style="text-align: center; color: #fdfafa;">نظم مهامك وأحقق أهدافك</p>
-        <form id="ToDoListForm">
+        <p style="text-align: center; color: #555;">نظم مهامك وأحقق أهدافك</p>
+
         <div class="add-task-section">
             <label for="taskTitleInput">عنوان المهمة:</label>
-            <input type="text" name="taskTitleInput" id="taskTitleInput" placeholder="أدخل عنوان المهمة">
+            <input type="text" id="taskTitleInput" placeholder="أدخل عنوان المهمة">
 
             <label for="taskDescriptionInput">الوصف (اختياري):</label>
-            <textarea name="taskDescriptionInput" id="taskDescriptionInput" placeholder="أدخل وصف المهمة ....."></textarea>
+            <textarea id="taskDescriptionInput" placeholder="أدخل وصف المهمة ....."></textarea>
 
             <label for="dueDateInput">تاريخ الاستحقاق (اختياري):</label>
-            <input type="date" name="dueDateInput" id="dueDateInput">
+            <input type="date" id="dueDateInput">
 
             <label for="priorityInput">الأولوية:</label>
-            <select name="priorityInput" id="priorityInput">
+            <select id="priorityInput">
                 <option value="منخفض">منخفض</option>
                 <option value="متوسط" selected>متوسط</option>
                 <option value="مرتفع">مرتفع</option>
@@ -206,15 +207,14 @@
         </div>
 
         <div class="summary">
-            <p >إجمالي المهام: <span id="totalTasksCount">0</span></p>
+            <p>إجمالي المهام: <span id="totalTasksCount">0</span></p>
         </div>
 
         <ul id="taskList" class="task-list">
-            <li  class="no-tasks-message" id="noTasksMessage">لا توجد مهام حالياً.<br>ابدا بإضافة مهمة جديدة!</li>
+            <li class="no-tasks-message" id="noTasksMessage">لا توجد مهام حالياً.<br>ابدا بإضافة مهمة جديدة!</li>
         </ul>
     </div>
-    <div id="result"></div>
-    </form>
+
     <script>
         const taskTitleInput = document.getElementById('taskTitleInput');
         const taskDescriptionInput = document.getElementById('taskDescriptionInput');
@@ -271,7 +271,7 @@
             }
             updateTotalTasksCount();
         }
-         
+
         function updateTotalTasksCount() {
             totalTasksCount.textContent = tasks.length;
         }
@@ -281,7 +281,7 @@
             const description = taskDescriptionInput.value.trim();
             const dueDate = dueDateInput.value; // التاريخ يتم تخزينه كنص (YYYY-MM-DD)
             const priority = priorityInput.value;
-            
+
             if (title !== '') {
                 tasks.push({
                     title: title,
@@ -314,55 +314,6 @@
         });
 
         renderTasks();
-
-        var ToDoListForm=document.getElementById("ToDoListForm")
-    ToDoListForm.addEventListener("click",async function(e){
-        e.preventDefault()
-        var taskTitleInput=document.querySelector("input[name='taskTitleInput']").value
-        var taskDescriptionInput=document.querySelector("input[name='taskDescriptionInput']").value
-        var dueDateInput=document.querySelector("input[name='dueDateInput']").value
-        var priorityInput=document.querySelector("input[name='priorityInput']").value
-
-        console.log(taskTitleInput,taskDescriptionInput,dueDateInput,priorityInput);
-        var data={
-            taskTitleInput:taskTitleInput,
-            taskDescriptionInput:taskDescriptionInput,
-            dueDateInput:dueDateInput,
-            priorityInput:priorityInput
-        }
-
-        
-        stringData=JSON.stringify(data)
-        console.log(stringData);
-
-            var result= await fetch("https://asyut-eng-synd.vercel.app/api/todos",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-         
-        },
-        body:stringData
-
-    })
-    console.log(result);
-    var resultDiv=document.getElementById("result")
-
-    console.log(result);
-    var response=await result.json()
-    console.log(response);
-    resultDiv.innerHTML=response.message
-    console.log(response);
-    if(result.ok){
-        console.log("success");
-
-    }else{
-        console.log("failed");
-       
-    }   
-
-
-
-    })
     </script>
 </body>
 </html>

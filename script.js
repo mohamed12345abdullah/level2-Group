@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 // Image Slider Logic
 var index = 0;
 var sliderContainer = document.getElementById("image-slider"); 
@@ -52,12 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'light');
         }
     });
-<<<<<<< Updated upstream
 });
-=======
-<<<<<<< Updated upstream
-});
-=======
 // // Get the bookmark element
 // const bookmark = document.getElementById("#bookmark");
 
@@ -80,8 +68,3 @@ document.addEventListener('DOMContentLoaded', function() {
 //         }
 //     });
 // }
->>>>>>> Stashed changes
-=======
-});
->>>>>>> Stashed changes
->>>>>>> Stashed changes
